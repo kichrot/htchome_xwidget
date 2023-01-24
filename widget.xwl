@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xwidget version="1.0">
 	<info>
-		<name>HTC_en</name>
+		<name>HTCHome_XWidget</name>
 		<namespace/>
 		<displayName>HTCHome_XWidget</displayName>
-		<version>4.0.0</version>
+		<version>5.0.0</version>
 		<authorName>kichrot</authorName>
-		<description/>
+		<description>Погодный виджет для XWidget, по мотивам HTC Home</description>
 		<permissions/>
 		<CloseBoxInsetX>4</CloseBoxInsetX>
 		<CloseBoxInsetY>28</CloseBoxInsetY>
@@ -18,7 +18,7 @@
 		<guid/>
 		<updateLog/>
 		<category>3</category>
-		<authorContact/>
+		<authorContact>https://github.com/kichrot/htchome_xwidget</authorContact>
 		<portAuthorName/>
 		<portAuthorContact/>
 		<tag/>

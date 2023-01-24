@@ -57,8 +57,8 @@
 			<image name="backgroundImage" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true"/>
 		</side>
 		<side name="back">
-			<layer name="layer6" left="296" top="5" width="290" height="211" onDblClick="!Flip">
-				<text name="curWeather2" width="290" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%
+			<layer name="layer6" left="313" top="8" width="271" height="211" onDblClick="!Flip">
+				<text name="curWeather2" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%
 
 Видимость: ${curVisibility} км.
 
@@ -66,10 +66,10 @@
 
 Заход Солнца: ${sunSet}
 
-Заход Луны: ${moonSet} " font.antiAlias="false" onDblClick="!Flip"/>
+Заход Луны: ${moonSet} " font.antiAlias="false" onDblClick="!Flip" locked="true"/>
 			</layer>
-			<layer name="layer5" left="8" top="5" width="290" height="211" onDblClick="!Flip">
-				<text name="curWeather1" width="290" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Ощущение температуры: ${curRealFeel}°                 
+			<layer name="layer5" left="24" top="8" width="271" height="211" onDblClick="!Flip">
+				<text name="curWeather1" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Ощущение температуры: ${curRealFeel}°                 
 
 Давление: ${curPressureWithUnit}             
 
@@ -81,10 +81,10 @@
 
 Ультрафиолетовый индекс: ${curUVIndex} (${curUVText}) 
                   
-Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" left="-1" onDblClick="!Flip"/>
+Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" onDblClick="!Flip" locked="true"/>
 			</layer>
 			<image name="backgroundImage_2" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
-				<text name="curWeatherTimeUpgr" width="578" height="27" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" left="8" top="231" vAlign="0" onDblClick="!Flip"/>
+				<text name="curWeatherTimeUpgr" width="562" height="27" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" left="22" top="231" vAlign="0" onDblClick="!Flip"/>
 			</image>
 		</side>
 	</window>
@@ -92,14 +92,14 @@
 		<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ShowSetting"/>
 		<item name="menuitem2" caption="Обновить погоду" onClick="!UpdateWeather" core="accweathercore1"/>
 		<item name="menuitem6" caption="Повернуть виджет" onClick="!Flip"/>
-		<item name="menuitem7" onClick="menuitem7OnClick" caption="Прогноз погоды показать/скрыть"/>
+		<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
 		<item name="menuitem3" caption="-"/>
 		<item name="menuitem4" core="accweathercore1" onClick="!SetCelcius" caption="Градусы по Цельсию"/>
 		<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
 	</menu>
 	<cores>
-		<dateTimeCore name="datetimecore1" timeZoneName=" Baghdad"/>
-		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
+		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="15000"/>
+		<dateTimeCore name="datetimecore1"/>
 	</cores>
 	<hotspots/>
 </xul>

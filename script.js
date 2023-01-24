@@ -130,26 +130,25 @@ var lang = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.lang",
   OpenURL("https://www.accuweather.com/"+lang+"/"+cityName+"/"+citycode+"/weather-forecast/"+citycode);
 }
 
-function layer3_visible(){
-  if(getinivalue(WidgetPath+"Control.ini","Control","layer3.visible","")==0){
-    layer3.Visible = false;
+function menuitem7_checked(){
+  menuitem7.checked = layer3.Visible;
+  if(layer3.Visible == false){
     backgroundImage.Src = WidgetPath+"base_2.png";
   }else{
-    layer3.Visible = true;
     backgroundImage.Src = WidgetPath+"base.png";
-  }
+  }  
 }
 
 function menuitem7OnClick(Sender){
-  if(getinivalue(WidgetPath+"Control.ini","Control","layer3.visible","")==0){
-    SetIniValue(WidgetPath+"Control.ini","Control","layer3.visible","1");
-  }else{
-    SetIniValue(WidgetPath+"Control.ini","Control","layer3.visible","0");
-  }
-  layer3_visible();
+  widget.cmd("!ShowHideObj=layer3");
+  setValue('layer3.visible',layer3.Visible);
+  saveIni;
+  menuitem7_checked();
 }
 
 function widgetOnLoad(){
   displacementDay();
-  layer3_visible();  
+  layer3.Visible = getValue('layer3.visible',layer3.Visible);
+  menuitem7_checked();
 }
+
