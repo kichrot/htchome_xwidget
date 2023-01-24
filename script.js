@@ -103,9 +103,9 @@ function accweathercore1OnUpdate(Sender){
 }
 
 function WeatherIconOnDblClick(day){
-  var lang = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.lang","");
-  var cityName = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.cityName","");
-  var citycode = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.citycode","");
+  var lang = GetIni("accweathercore1.lang","");
+  var cityName = GetIni("accweathercore1.cityName",""); 
+  var citycode = GetIni("accweathercore1.citycode","");
   OpenURL("https://www.accuweather.com/"+lang+"/"+cityName+"/"+citycode+"/daily-weather-forecast/"+citycode+"?day="+day);
 }
 
@@ -124,9 +124,9 @@ function Day7_WeatherIconOnDblClick(){WeatherIconOnDblClick(7)}
 function Day8_WeatherIconOnDblClick(){WeatherIconOnDblClick(8)}
 
 function Cur_WeatherIconOnDblClick(){
-var lang = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.lang","");
-  var cityName = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.cityName","");
-  var citycode = getinivalue(WidgetPath+"Config.ini","Default","accweathercore1.citycode","");
+  var lang = GetIni("accweathercore1.lang","");
+  var cityName = GetIni("accweathercore1.cityName","");
+  var citycode = GetIni("accweathercore1.citycode","");
   OpenURL("https://www.accuweather.com/"+lang+"/"+cityName+"/"+citycode+"/weather-forecast/"+citycode);
 }
 
