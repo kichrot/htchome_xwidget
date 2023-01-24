@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xwidget version="1.0">
+	<info>
+		<name>HTC_en</name>
+		<namespace/>
+		<displayName>HTCHome_XWidget</displayName>
+		<version>4.0.0</version>
+		<authorName>kichrot</authorName>
+		<description/>
+		<permissions/>
+		<CloseBoxInsetX>4</CloseBoxInsetX>
+		<CloseBoxInsetY>28</CloseBoxInsetY>
+		<Width>596</Width>
+		<Height>261</Height>
+		<minPlatformVersion>0.1</minPlatformVersion>
+		<uiType>xul</uiType>
+		<mainSrc>main.xul</mainSrc>
+		<guid/>
+		<updateLog/>
+		<category>3</category>
+		<authorContact/>
+		<portAuthorName/>
+		<portAuthorContact/>
+		<tag/>
+		<enabledCloseBox>false</enabledCloseBox>
+		<platform>0</platform>
+	</info>
+</xwidget>
