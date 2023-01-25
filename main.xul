@@ -98,7 +98,7 @@
 		<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
 	</menu>
 	<cores>
-		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="15000"/>
+		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
 		<dateTimeCore name="datetimecore1"/>
 	</cores>
 	<hotspots/>
