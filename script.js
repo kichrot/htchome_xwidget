@@ -160,4 +160,3 @@ function widgetOnLoad(){
   layer3.Visible = getValue('layer3.visible',layer3.Visible);
   menuitem7_checked();
 }
-
