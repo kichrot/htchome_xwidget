@@ -151,6 +151,11 @@ function menuitem7OnClick(Sender){
 }
 
 function widgetOnLoad(){
+  if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
+    displacement_Day = 1;
+  }else{
+    displacement_Day = 0;
+  }
   displacementDay();
   layer3.Visible = getValue('layer3.visible',layer3.Visible);
   menuitem7_checked();
