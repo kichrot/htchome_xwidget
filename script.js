@@ -1,6 +1,8 @@
+var displacement_Day = 0;
 
 function displacementDay() {
-    if (datetimecore1.get("%Day") == accweathercore1.get("%dayNumb1")) {
+    if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
+        displacement_Day = 0;
         Day1_lowTemp.coreFormat = "${lowTemp1}°";
         Day2_lowTemp.coreFormat = "/${lowTemp2}°";
         Day3_lowTemp.coreFormat = "/${lowTemp3}°";
@@ -42,7 +44,9 @@ function displacementDay() {
         Day6_WeatherIcon.Hint = accweathercore1.get("%weatherText6");
         Day7_WeatherIcon.Hint = accweathercore1.get("%weatherText7");
         Day8_WeatherIcon.Hint = accweathercore1.get("%weatherText8");        
-    } else {
+    } 
+    if (datetimecore1.get("%Day")!=accweathercore1.get("%dayNumb1") && displacement_Day==0) {
+        displacement_Day = 1;
         Day1_lowTemp.coreFormat = "${lowTemp2}°";
         Day2_lowTemp.coreFormat = "/${lowTemp3}°";
         Day3_lowTemp.coreFormat = "/${lowTemp4}°";
@@ -99,7 +103,7 @@ function layer2OnChange(Sender){
 
 function accweathercore1OnUpdate(Sender){
    displacementDay();
-   SaveAsDefIni();  
+   //SaveAsDefIni();  
 }
 
 function WeatherIconOnDblClick(day){
