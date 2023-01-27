@@ -89,20 +89,24 @@
 		</side>
 	</window>
 	<menu>
-		<item name="menuitem9" caption="Набор иконок погоды">
-			<item name="menuitem10" caption="Набор 1" onClick="menuitem10OnClick"/>
-			<item name="menuitem11" caption="Набор 2" onClick="menuitem11OnClick"/>
-			<item name="menuitem12" caption="Набор 3" onClick="menuitem12OnClick"/>
-			<item name="menuitem13" caption="Набор 4" onClick="menuitem13OnClick"/>
+		<item name="menuitem14" caption="Настройки виджета">
+			<item name="menuitem9" caption="Набор иконок погоды">
+				<item name="menuitem10" caption="Набор 1" onClick="menuitem10OnClick"/>
+				<item name="menuitem11" caption="Набор 2" onClick="menuitem11OnClick"/>
+				<item name="menuitem12" caption="Набор 3" onClick="menuitem12OnClick"/>
+				<item name="menuitem13" caption="Набор 4" onClick="menuitem13OnClick"/>
+			</item>
+			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ShowSetting"/>
+			<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
+			<item name="menuitem3" caption="-"/>
+			<item name="menuitem4" core="accweathercore1" onClick="!SetCelcius" caption="Градусы по Цельсию"/>
+			<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
 		</item>
-		<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ShowSetting"/>
-		<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
 		<item name="menuitem8" caption="-"/>
 		<item name="menuitem2" caption="Обновить погоду" onClick="!UpdateWeather" core="accweathercore1"/>
 		<item name="menuitem6" caption="Повернуть виджет" onClick="!Flip"/>
-		<item name="menuitem3" caption="-"/>
-		<item name="menuitem4" core="accweathercore1" onClick="!SetCelcius" caption="Градусы по Цельсию"/>
-		<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
+		<cores/>
+		<hotspots/>
 	</menu>
 	<cores>
 		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
