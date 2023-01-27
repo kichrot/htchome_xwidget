@@ -11,7 +11,7 @@
 			</layer>
 			<text name="cityName" width="327" height="22" font.family="Tahoma" font.size="18" left="257" top="137" font.fill.color="255,255,255,255" core="accweathercore1" coreFormat="${cityName}" cursor="-21" onClick="!ShowSetting" font.style="Bold" flatStyle.enabled="true" flatStyle.color="0,0,0,255" flatStyle.offsetX="-1"/>
 			<text name="curWeatherText" left="257" top="105" width="329" height="32" font.fill.color="255,255,255,255" font.size="16" font.family="Tahoma" mouseThrough="True" core="accweathercore1" wordWrap="True" upperCaseFirstWord="True" text="Sunny" coreFormat="${curWeatherText}" font.style="Bold" effect.bevel.size="6" effect.bevel.direction="88" effect.innerShadow.opacity=".42" effect.shadow.direction="146" effect.shadow.distance="-29" flatStyle.enabled="true" flatStyle.offsetX="-1" flatStyle.color="0,0,0,255" effect.shadow.opacity="0" effect.glow.opacity=".85" effect.glow.softness="1.14" effect.glow.color="0,0,0,255"/>
-			<image name="curWeatherIcon" width="245" height="191" animateChange.switchEffect="12" animateChange.dynamicEffect="6" animateChange.occasion="2" animateChange.duration="1" enabledAnimateChange="True" src="wth\7.png" coreFormat="wth\${curWeatherIconNum}.png" hAlign="1" vAlign="1" align="1" left="370" core="accweathercore1" stretchMargins="0,4,0,0" wrapMode="2" scale=".93" canClipped="false" top="-22" cursor="-21" onDblClick="Cur_WeatherIconOnDblClick"/>
+			<image name="curWeatherIcon" width="245" height="191" animateChange.switchEffect="12" animateChange.dynamicEffect="6" animateChange.occasion="2" animateChange.duration="1" enabledAnimateChange="True" src="wth\7.png" hAlign="1" vAlign="1" align="1" left="370" core="accweathercore1" stretchMargins="0,4,0,0" wrapMode="2" scale=".93" canClipped="false" top="-22" cursor="-21" onDblClick="Cur_WeatherIconOnDblClick"/>
 			<text name="curTemp" left="257" top="6" width="111" height="67" font.fill.color="255,255,255,255" font.size="50" font.family="Terminal" mouseThrough="True" text="0°" core="accweathercore1" coreFormat="${curTemp}°" font.style="Bold" vAlign="0" font.antiAlias="true"/>
 			<text name="curData" top="137" width="232" height="22" left="12" font.family="Trebuchet MS" font.fill.color="255,255,255,255" mouseThrough="True" text="Mon" coreFormat="${weekShort}. ${Day} ${MonthTxt} ${Year}г." font.style="Bold" font.size="21" font.antiAlias="false" vAlign="0" core="datetimecore1"/>
 			<layer name="layer3" left="8" top="156" width="576" height="100" cursor="-21">
@@ -44,12 +44,12 @@
 				<text name="Day3_highTemp" left="83" top="69" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21"/>
 				<text name="Day2_highTemp" top="69" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21"/>
 			</layer>
-			<layer name="layer2" width="128" height="132" top="6" left="130" enabledAnimateChange="true" animateChange.duration=".9" animateChange.switchEffect="27" animateChange.dynamicEffect="10" core="datetimecore1" coreFormat="%Minute0" onChange="layer2OnChange" onDblClick="!Flip">
+			<layer name="layer2" width="128" height="132" top="4" left="130" enabledAnimateChange="true" animateChange.duration=".9" animateChange.switchEffect="27" animateChange.dynamicEffect="10" core="datetimecore1" coreFormat="%Minute0" onChange="layer2OnChange" onDblClick="!Flip">
 				<image name="image3" width="128" height="132" src="FlipAnim\Background\flip_bg.png" wrapMode="2" locked="true" mouseThrough="true">
 					<numbImage name="numbimage2" width="96" height="83" src="FlipAnim\Digits\all.png" left="17" top="24" frameCount="10" animateChange.switchEffect="18" animateChange.dynamicEffect="0" animateChange.occasion="2" animateChange.duration=".3" values="00" digits="2" mouseThrough="true"/>
 				</image>
 			</layer>
-			<layer name="layer1" left="3" width="128" height="132" enabledAnimateChange="true" animateChange.duration=".9" animateChange.switchEffect="27" animateChange.dynamicEffect="10" core="datetimecore1" coreFormat="%Hour0" top="6" onChange="layer1OnChange" onDblClick="!Flip">
+			<layer name="layer1" left="3" width="128" height="132" enabledAnimateChange="true" animateChange.duration=".9" animateChange.switchEffect="27" animateChange.dynamicEffect="10" core="datetimecore1" coreFormat="%Hour0" top="4" onChange="layer1OnChange" onDblClick="!Flip">
 				<image name="image2" width="128" height="132" src="FlipAnim\Background\flip_bg.png" mouseThrough="True" locked="true">
 					<numbImage name="numbimage1" width="96" height="83" src="FlipAnim\Digits\all.png" left="17" top="24" frameCount="10" mouseThrough="True" animateChange.switchEffect="18" animateChange.dynamicEffect="0" animateChange.occasion="2" animateChange.duration=".3" values="00" digits="2"/>
 				</image>
@@ -89,10 +89,17 @@
 		</side>
 	</window>
 	<menu>
+		<item name="menuitem9" caption="Набор иконок погоды">
+			<item name="menuitem10" caption="Набор 1" onClick="menuitem10OnClick"/>
+			<item name="menuitem11" caption="Набор 2" onClick="menuitem11OnClick"/>
+			<item name="menuitem12" caption="Набор 3" onClick="menuitem12OnClick"/>
+			<item name="menuitem13" caption="Набор 4" onClick="menuitem13OnClick"/>
+		</item>
 		<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ShowSetting"/>
+		<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
+		<item name="menuitem8" caption="-"/>
 		<item name="menuitem2" caption="Обновить погоду" onClick="!UpdateWeather" core="accweathercore1"/>
 		<item name="menuitem6" caption="Повернуть виджет" onClick="!Flip"/>
-		<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
 		<item name="menuitem3" caption="-"/>
 		<item name="menuitem4" core="accweathercore1" onClick="!SetCelcius" caption="Градусы по Цельсию"/>
 		<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
