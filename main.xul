@@ -60,7 +60,7 @@
 			<layer name="layer6" left="313" top="8" width="271" height="211" onDblClick="!Flip">
 				<text name="curWeather2" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%
 
-Видимость: ${curVisibility} км.
+Видимость: ${curVisibility} км
 
 Направление ветра: ${curWindDirection}
 
@@ -100,8 +100,8 @@
 			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ShowSetting"/>
 			<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
 			<item name="menuitem3" caption="-"/>
-			<item name="menuitem4" core="accweathercore1" onClick="!SetCelcius" caption="Градусы по Цельсию"/>
-			<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="!SetFahrenheit"/>
+			<item name="menuitem4" onClick="menuitem4OnClick" caption="Градусы по Цельсию" core="accweathercore1"/>
+			<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="menuitem5OnClick"/>
 		</item>
 		<item name="menuitem8" caption="-"/>
 		<item name="menuitem2" caption="Обновить погоду" onClick="!UpdateWeather" core="accweathercore1"/>

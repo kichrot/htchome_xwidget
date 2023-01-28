@@ -188,7 +188,15 @@ function widgetOnLoad(){
   if(wth_icon=="2"){menuitem11.checked = true;}
   if(wth_icon=="3"){menuitem12.checked = true;}
   if(wth_icon=="4"){menuitem13.checked = true;}
-  WeatherIcon_src();
+  WeatherIcon_src()
+  if(GetValue("accweathercore1.isMetric","")==1){
+    menuitem4.checked = true;
+    menuitem5.checked = false;
+  }
+  if(GetValue("accweathercore1.isMetric","")==0){
+    menuitem4.checked = false;
+    menuitem5.checked = true;
+  }
 }
 
 function menuitem10OnClick(Sender){
@@ -247,4 +255,17 @@ function menuitem15OnClick(Sender){
   var wsc = new ActiveXObject("WScript.Shell");
   widget.ForceToFround();
   wsc.SendKeys("{f5}");
+}
+
+
+function menuitem4OnClick(Sender){
+  accweathercore1.cmd(null,"!SetCelcius");
+  menuitem4.checked = true;
+  menuitem5.checked = false;
+}
+
+function menuitem5OnClick(Sender){
+  accweathercore1.cmd(null,"!SetFahrenheit");
+  menuitem4.checked = false;
+  menuitem5.checked = true;
 }
