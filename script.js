@@ -241,3 +241,9 @@ if(menuitem13.checked==false){
   } 
   WeatherIcon_src();
 }
+
+function menuitem15OnClick(Sender){
+  var wsc = new ActiveXObject("WScript.Shell");
+  widget.ForceToFround();
+  wsc.SendKeys("{f5}");
+}

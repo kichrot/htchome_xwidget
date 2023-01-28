@@ -107,6 +107,7 @@
 		<item name="menuitem6" caption="Повернуть виджет" onClick="!Flip"/>
 		<cores/>
 		<hotspots/>
+		<item name="menuitem15" onClick="menuitem15OnClick" caption="Перезагрузить виджет"/>
 	</menu>
 	<cores>
 		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
