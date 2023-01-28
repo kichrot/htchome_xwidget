@@ -104,6 +104,7 @@ function layer2OnChange(Sender){
 
 function accweathercore1OnUpdate(Sender){
    displacementDay();
+   curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
    //SaveAsDefIni();  
 }
 
