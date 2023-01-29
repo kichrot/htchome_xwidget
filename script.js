@@ -188,12 +188,13 @@ function widgetOnLoad(){
   if(wth_icon=="2"){menuitem11.checked = true;}
   if(wth_icon=="3"){menuitem12.checked = true;}
   if(wth_icon=="4"){menuitem13.checked = true;}
-  WeatherIcon_src()
-  if(GetValue("accweathercore1.isMetric","")==1){
+  WeatherIcon_src();
+  var isMetric = GetValue("accweathercore1.isMetric","1");
+  if(isMetric==1){
     menuitem4.checked = true;
     menuitem5.checked = false;
   }
-  if(GetValue("accweathercore1.isMetric","")==0){
+  if(isMetric==0){
     menuitem4.checked = false;
     menuitem5.checked = true;
   }
