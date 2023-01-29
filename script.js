@@ -94,7 +94,6 @@ function displacementDay() {
 
 function layer1OnChange(Sender){
   numbimage1.values = Sender.value;
-  //displacementDay();
 }
 
 function layer2OnChange(Sender){
@@ -199,6 +198,17 @@ function widgetOnLoad(){
     menuitem4.checked = false;
     menuitem5.checked = true;
   }
+  var hr = GetValue("datetimecore1.is12hr","0");
+  if(hr=="0"){
+    datetimecore1.cmd(null,"!24hr");
+    menuitem18.checked = true;
+    menuitem17.checked = false;
+  }
+  if(hr=="1"){
+    datetimecore1.cmd(null,"!12hr");
+    menuitem18.checked = false;
+    menuitem17.checked = true;
+  }
 }
 
 function menuitem10OnClick(Sender){
@@ -270,4 +280,16 @@ function menuitem5OnClick(Sender){
   accweathercore1.cmd(null,"!SetFahrenheit");
   menuitem4.checked = false;
   menuitem5.checked = true;
+}
+ 
+function menuitem17OnClick(Sender){
+  datetimecore1.cmd(null,"!12hr");
+  menuitem17.checked = true;
+  menuitem18.checked = false;  
+}
+
+function menuitem18OnClick(Sender){
+  datetimecore1.cmd(null,"!24hr");
+  menuitem17.checked = false;
+  menuitem18.checked = true;  
 }

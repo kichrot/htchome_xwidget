@@ -105,6 +105,9 @@
 			<item name="menuitem3" caption="-"/>
 			<item name="menuitem4" onClick="menuitem4OnClick" caption="Градусы по Цельсию" core="accweathercore1"/>
 			<item name="menuitem5" caption="Градусы по Фаренгейту" core="accweathercore1" onClick="menuitem5OnClick"/>
+			<item name="menuitem16" caption="-"/>
+			<item name="menuitem17" caption="12-часовой формат времени" core="datetimecore1" onClick="menuitem17OnClick"/>
+			<item name="menuitem18" caption="24-часовой формат времени" core="datetimecore1" onClick="menuitem18OnClick"/>
 		</item>
 		<item name="menuitem8" caption="-"/>
 		<item name="menuitem2" caption="Обновить погоду" onClick="!UpdateWeather" core="accweathercore1"/>
