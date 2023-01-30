@@ -1,3 +1,4 @@
+var widget_OnLoad = 1;
 var displacement_Day = 0;
 var wth_icon = "1";
 var UpdateWeather_day = datetimecore1.get("%Day");
@@ -99,9 +100,7 @@ function layer1OnChange(Sender){
   numbimage1.values = Sender.value;
 }
 
-function layer2OnChange(Sender){
-  numbimage2.values = Sender.value
-  displacementDay();
+function checkDateTime(){
   var  core_Day = datetimecore1.get("%Day");
   var  core_Hour = datetimecore1.get("%Hour");
   var  core_Minute = Number(datetimecore1.get("%Minute"));
@@ -115,8 +114,14 @@ function layer2OnChange(Sender){
   }
   var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
   if(core_Minute>UpdateWeather_minute_15){
-    setTimeout(accweathercore1.cmd(null,"!UpdateWeather"), 5000);
+    accweathercore1.cmd(null,"!UpdateWeather");
   }
+}
+
+function layer2OnChange(Sender){
+  numbimage2.values = Sender.value
+  displacementDay();
+  if(widget_OnLoad==0){checkDateTime();}
 }
 
 function accweathercore1OnUpdate(Sender){
@@ -230,6 +235,7 @@ function widgetOnLoad(){
     menuitem18.checked = false;
     menuitem17.checked = true;
   }
+  widget_OnLoad = 0;
 }
 
 function menuitem10OnClick(Sender){
