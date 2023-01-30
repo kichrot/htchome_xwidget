@@ -1,5 +1,8 @@
 var displacement_Day = 0;
-var wth_icon = "1"; 
+var wth_icon = "1";
+var UpdateWeather_day = datetimecore1.get("%Day");
+var UpdateWeather_hour = datetimecore1.get("%Hour");
+var UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
 
 function displacementDay() {
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
@@ -99,11 +102,29 @@ function layer1OnChange(Sender){
 function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
+  var  core_Day = datetimecore1.get("%Day");
+  var  core_Hour = datetimecore1.get("%Hour");
+  var  core_Minute = Number(datetimecore1.get("%Minute"));
+  if(UpdateWeather_day!=core_Day){
+    accweathercore1.cmd(null,"!UpdateWeather");
+    return(0);
+  }
+  if(UpdateWeather_hour!=core_Hour){
+    accweathercore1.cmd(null,"!UpdateWeather");
+    return(0);
+  }
+  var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
+  if(core_Minute>UpdateWeather_minute_15){
+    setTimeout(accweathercore1.cmd(null,"!UpdateWeather"), 5000);
+  }
 }
 
 function accweathercore1OnUpdate(Sender){
    displacementDay();
    curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
+   UpdateWeather_day = datetimecore1.get("%Day");
+   UpdateWeather_hour = datetimecore1.get("%Hour");
+   UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
 }
 
 function WeatherIconOnDblClick(day){
