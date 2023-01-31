@@ -4,6 +4,7 @@ var wth_icon = "1";
 var UpdateWeather_day = datetimecore1.get("%Day");
 var UpdateWeather_hour = datetimecore1.get("%Hour");
 var UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
+var WeatherIcon_DblClick = "0";
 
 function displacementDay() {
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
@@ -48,7 +49,15 @@ function displacementDay() {
         Day5_WeatherIcon.Hint = accweathercore1.get("%weatherText5");
         Day6_WeatherIcon.Hint = accweathercore1.get("%weatherText6");
         Day7_WeatherIcon.Hint = accweathercore1.get("%weatherText7");
-        Day8_WeatherIcon.Hint = accweathercore1.get("%weatherText8");        
+        Day8_WeatherIcon.Hint = accweathercore1.get("%weatherText8"); 
+        
+        layer8.Hint = accweathercore1.get("%weatherText2");
+        layer9.Hint = accweathercore1.get("%weatherText3");
+        layer10.Hint = accweathercore1.get("%weatherText4");
+        layer11.Hint = accweathercore1.get("%weatherText5");
+        layer12.Hint = accweathercore1.get("%weatherText6");
+        layer13.Hint = accweathercore1.get("%weatherText7");
+        layer14.Hint = accweathercore1.get("%weatherText8");       
     } 
     if (datetimecore1.get("%Day")!=accweathercore1.get("%dayNumb1") && displacement_Day==0) {
         displacement_Day = 1;
@@ -93,6 +102,14 @@ function displacementDay() {
         Day6_WeatherIcon.Hint = accweathercore1.get("%weatherText7");
         Day7_WeatherIcon.Hint = accweathercore1.get("%weatherText8");
         Day8_WeatherIcon.Hint = accweathercore1.get("%weatherText9");
+        
+        layer8.Hint = accweathercore1.get("%weatherText3");
+        layer9.Hint = accweathercore1.get("%weatherText4");
+        layer10.Hint = accweathercore1.get("%weatherText5");
+        layer11.Hint = accweathercore1.get("%weatherText6");
+        layer12.Hint = accweathercore1.get("%weatherText7");
+        layer13.Hint = accweathercore1.get("%weatherText8");
+        layer14.Hint = accweathercore1.get("%weatherText9");
     }
 }
 
@@ -198,6 +215,92 @@ function WeatherIcon_src(){
   }
 }
 
+function WeatherIcon_click_ch(ch){
+  if(ch=="1"){
+    menuitem19.Checked = false;
+    curWeatherIcon.MouseThrough = true;
+    Day2_WeatherIcon.MouseThrough = true;
+    Day3_WeatherIcon.MouseThrough = true;
+    Day4_WeatherIcon.MouseThrough = true;
+    Day5_WeatherIcon.MouseThrough = true;
+    Day6_WeatherIcon.MouseThrough = true;
+    Day7_WeatherIcon.MouseThrough = true;
+    Day8_WeatherIcon.MouseThrough = true;
+
+    Day2_lowTemp.MouseThrough = true;
+    Day3_lowTemp.MouseThrough = true;
+    Day4_lowTemp.MouseThrough = true;
+    Day5_lowTemp.MouseThrough = true;
+    Day6_lowTemp.MouseThrough = true;
+    Day7_lowTemp.MouseThrough = true;
+    Day8_lowTemp.MouseThrough = true;
+
+    Day2_highTemp.MouseThrough = true;
+    Day3_highTemp.MouseThrough = true;
+    Day4_highTemp.MouseThrough = true;
+    Day5_highTemp.MouseThrough = true;
+    Day6_highTemp.MouseThrough = true;
+    Day7_highTemp.MouseThrough = true;
+    Day8_highTemp.MouseThrough = true;
+
+    Day2_Date.MouseThrough = true;
+    Day3_Date.MouseThrough = true;
+    Day4_Date.MouseThrough = true;
+    Day5_Date.MouseThrough = true;
+    Day6_Date.MouseThrough = true;
+    Day7_Date.MouseThrough = true;
+    Day8_Date.MouseThrough = true;
+  }else{
+    menuitem19.Checked = true;
+    curWeatherIcon.MouseThrough = false;
+    Day2_WeatherIcon.MouseThrough = false;
+    Day3_WeatherIcon.MouseThrough = false;
+    Day4_WeatherIcon.MouseThrough = false;
+    Day5_WeatherIcon.MouseThrough = false;
+    Day6_WeatherIcon.MouseThrough = false;
+    Day7_WeatherIcon.MouseThrough = false;
+    Day8_WeatherIcon.MouseThrough = false;
+
+    Day2_lowTemp.MouseThrough = false;
+    Day3_lowTemp.MouseThrough = false;
+    Day4_lowTemp.MouseThrough = false;
+    Day5_lowTemp.MouseThrough = false;
+    Day6_lowTemp.MouseThrough = false;
+    Day7_lowTemp.MouseThrough = false;
+    Day8_lowTemp.MouseThrough = false;
+
+    Day2_highTemp.MouseThrough = false;
+    Day3_highTemp.MouseThrough = false;
+    Day4_highTemp.MouseThrough = false;
+    Day5_highTemp.MouseThrough = false;
+    Day6_highTemp.MouseThrough = false;
+    Day7_highTemp.MouseThrough = false;
+    Day8_highTemp.MouseThrough = false;
+
+    Day2_Date.MouseThrough = false;
+    Day3_Date.MouseThrough = false;
+    Day4_Date.MouseThrough = false;
+    Day5_Date.MouseThrough = false;
+    Day6_Date.MouseThrough = false;
+    Day7_Date.MouseThrough = false;
+    Day8_Date.MouseThrough = false;
+  }
+}
+
+function WeatherIcon_DblClick_ch(){
+  if(WeatherIcon_DblClick=="1"){
+    WeatherIcon_DblClick = "0";
+    Setvalue("WeatherIcon_DblClick",WeatherIcon_DblClick);
+    saveIni;
+    WeatherIcon_click_ch("0");
+  }else{
+    WeatherIcon_DblClick = "1";
+    Setvalue("WeatherIcon_DblClick",WeatherIcon_DblClick);
+    saveIni;
+    WeatherIcon_click_ch("1");
+  }
+}
+
 function widgetOnLoad(){
   if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
     displacement_Day = 1;
@@ -235,6 +338,8 @@ function widgetOnLoad(){
     menuitem18.checked = false;
     menuitem17.checked = true;
   }
+  WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
+  WeatherIcon_click_ch(WeatherIcon_DblClick);
   widget_OnLoad = 0;
 }
 
@@ -296,7 +401,6 @@ function menuitem15OnClick(Sender){
   wsc.SendKeys("{f5}");
 }
 
-
 function menuitem4OnClick(Sender){
   accweathercore1.cmd(null,"!SetCelcius");
   menuitem4.checked = true;
@@ -319,4 +423,8 @@ function menuitem18OnClick(Sender){
   datetimecore1.cmd(null,"!24hr");
   menuitem17.checked = false;
   menuitem18.checked = true;  
+}
+
+function menuitem19OnClick(Sender){
+  WeatherIcon_DblClick_ch();
 }

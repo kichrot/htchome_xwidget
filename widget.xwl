@@ -12,7 +12,7 @@
 		<CloseBoxInsetX>4</CloseBoxInsetX>
 		<CloseBoxInsetY>28</CloseBoxInsetY>
 		<Width>596</Width>
-		<Height>260</Height>
+		<Height>261</Height>
 		<minPlatformVersion>0.1</minPlatformVersion>
 		<uiType>xul</uiType>
 		<mainSrc>main.xul</mainSrc>
