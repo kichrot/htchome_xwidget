@@ -428,3 +428,7 @@ function menuitem18OnClick(Sender){
 function menuitem19OnClick(Sender){
   WeatherIcon_DblClick_ch();
 }
+
+function cityNameOnChange(Sender){
+  menuitem15OnClick();  
+}
