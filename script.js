@@ -150,11 +150,13 @@ function layer2OnChange(Sender){
 }
 
 function accweathercore1OnUpdate(Sender){
-   displacementDay();
-   curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
-   UpdateWeather_day = datetimecore1.get("%Day");
-   UpdateWeather_hour = datetimecore1.get("%Hour");
-   UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
+   try{
+     displacementDay();
+     curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
+     UpdateWeather_day = datetimecore1.get("%Day");
+     UpdateWeather_hour = datetimecore1.get("%Hour");
+     UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
+   } catch(er){widget_reload()}
 }
 
 function WeatherIconOnDblClick(day){
@@ -310,46 +312,48 @@ function WeatherIcon_DblClick_ch(){
 }
 
 function widgetOnLoad(){
-  if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
-    displacement_Day = 1;
-  }else{
-    displacement_Day = 0;
-  }
-  displacementDay();
-  layer3.Visible = getValue('layer3.visible',layer3.Visible);
-  menuitem7_checked(); 
-  wth_icon = getValue('wth_icon',wth_icon);
-  if(wth_icon=="1"){menuitem10.checked = true;}
-  if(wth_icon=="2"){menuitem11.checked = true;}
-  if(wth_icon=="3"){menuitem12.checked = true;}
-  if(wth_icon=="4"){menuitem13.checked = true;}
-  WeatherIcon_src();
-  var Metric = GetValue("accweathercore1.isMetric","1");
-  if(Metric==1){
-    accweathercore1.cmd(null,"!SetCelcius");
-    menuitem4.checked = true;
-    menuitem5.checked = false;
-  }
-  if(Metric==0){
-    accweathercore1.cmd(null,"!SetFahrenheit");
-    menuitem4.checked = false;
-    menuitem5.checked = true;
-  }
-  var hr = GetValue("datetimecore1.is12hr","0");
-  if(hr=="0"){
-    datetimecore1.cmd(null,"!24hr");
-    menuitem18.checked = true;
-    menuitem17.checked = false;
-  }
-  if(hr=="1"){
-    datetimecore1.cmd(null,"!12hr");
-    menuitem18.checked = false;
-    menuitem17.checked = true;
-  }
-  WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
-  WeatherIcon_click_ch(WeatherIcon_DblClick);
-  menuitem20.checked = GetValue("menuitem20.checked",true);
-  widget_OnLoad = 0;
+  try{
+    if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
+      displacement_Day = 1;
+    }else{
+      displacement_Day = 0;
+    }
+    displacementDay();
+    layer3.Visible = getValue('layer3.visible',layer3.Visible);
+    menuitem7_checked(); 
+    wth_icon = getValue('wth_icon',wth_icon);
+    if(wth_icon=="1"){menuitem10.checked = true;}
+    if(wth_icon=="2"){menuitem11.checked = true;}
+    if(wth_icon=="3"){menuitem12.checked = true;}
+    if(wth_icon=="4"){menuitem13.checked = true;}
+    WeatherIcon_src();
+    var Metric = GetValue("accweathercore1.isMetric","1");
+    if(Metric==1){
+      accweathercore1.cmd(null,"!SetCelcius");
+      menuitem4.checked = true;
+      menuitem5.checked = false;
+    }
+    if(Metric==0){
+      accweathercore1.cmd(null,"!SetFahrenheit");
+      menuitem4.checked = false;
+      menuitem5.checked = true;
+    }
+    var hr = GetValue("datetimecore1.is12hr","0");
+    if(hr=="0"){
+      datetimecore1.cmd(null,"!24hr");
+      menuitem18.checked = true;
+      menuitem17.checked = false;
+    }
+    if(hr=="1"){
+      datetimecore1.cmd(null,"!12hr");
+      menuitem18.checked = false;
+      menuitem17.checked = true;
+    }
+    WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
+    WeatherIcon_click_ch(WeatherIcon_DblClick);
+    menuitem20.checked = GetValue("menuitem20.checked",true);
+    widget_OnLoad = 0;
+  } catch(er){widget_reload()}
 }
 
 function menuitem10OnClick(Sender){
