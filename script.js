@@ -117,28 +117,36 @@ function layer1OnChange(Sender){
   numbimage1.values = Sender.value;
 }
 
+function widget_reload(){
+  var wsc = new ActiveXObject("WScript.Shell");
+  widget.ForceToFround();
+  wsc.SendKeys("{f5}");
+}
+
 function checkDateTime(){
-  var  core_Day = datetimecore1.get("%Day");
-  var  core_Hour = datetimecore1.get("%Hour");
-  var  core_Minute = Number(datetimecore1.get("%Minute"));
-  if(UpdateWeather_day!=core_Day){
-    accweathercore1.cmd(null,"!UpdateWeather");
-    return(0);
-  }
-  if(UpdateWeather_hour!=core_Hour){
-    accweathercore1.cmd(null,"!UpdateWeather");
-    return(0);
-  }
-  var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
-  if(core_Minute>UpdateWeather_minute_15){
-    accweathercore1.cmd(null,"!UpdateWeather");
-  }
+  try {
+    var  core_Day = datetimecore1.get("%Day");
+    var  core_Hour = datetimecore1.get("%Hour");
+    var  core_Minute = Number(datetimecore1.get("%Minute"));
+    if(UpdateWeather_day!=core_Day){
+      accweathercore1.cmd(null,"!UpdateWeather");
+      return(0);
+    }
+    if(UpdateWeather_hour!=core_Hour){
+      accweathercore1.cmd(null,"!UpdateWeather");
+      return(0);
+    }
+    var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
+    if(core_Minute>UpdateWeather_minute_15){
+      widget_reload();
+    }
+  } catch(er){widget_reload()}
 }
 
 function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
-  if(widget_OnLoad==0){checkDateTime();}
+  if(widget_OnLoad==0){checkDateTime()}
 }
 
 function accweathercore1OnUpdate(Sender){
@@ -340,6 +348,7 @@ function widgetOnLoad(){
   }
   WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
   WeatherIcon_click_ch(WeatherIcon_DblClick);
+  menuitem20.checked = GetValue("menuitem20.checked",true);
   widget_OnLoad = 0;
 }
 
@@ -395,12 +404,6 @@ if(menuitem13.checked==false){
   WeatherIcon_src();
 }
 
-function menuitem15OnClick(Sender){
-  var wsc = new ActiveXObject("WScript.Shell");
-  widget.ForceToFround();
-  wsc.SendKeys("{f5}");
-}
-
 function menuitem4OnClick(Sender){
   accweathercore1.cmd(null,"!SetCelcius");
   menuitem4.checked = true;
@@ -430,5 +433,27 @@ function menuitem19OnClick(Sender){
 }
 
 function cityNameOnChange(Sender){
-  menuitem15OnClick();  
+  widget_reload();  
+} 
+
+function Forced_always_below(){
+  //widget.WindowZPosition = widget.WindowZPosition;
+  if(menuitem20.checked){
+    widget.WindowZPosition = -1;
+  }
+}
+
+function widgetOnEnter(){
+  widget.SetFocus();
+  Forced_always_below();
+}
+
+function menuitem20OnClick(Sender){
+  if(menuitem20.checked==false){
+    menuitem20.checked = true;
+  }else{
+    menuitem20.checked = false;
+  }   
+  setValue('menuitem20.checked',menuitem20.checked);
+  saveIni;
 }
