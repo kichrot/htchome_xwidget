@@ -146,17 +146,27 @@ function checkDateTime(){
 function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
-  if(widget_OnLoad==0){checkDateTime()}
+  if(widget_OnLoad==0){checkDateTime();}
 }
 
 function accweathercore1OnUpdate(Sender){
+   widget_OnLoad = 1;  
    try{
      displacementDay();
      curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
      UpdateWeather_day = datetimecore1.get("%Day");
      UpdateWeather_hour = datetimecore1.get("%Hour");
      UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
-   } catch(er){widget_reload()}
+     if(menuitem21.checked){
+       for(var i = 0; i < 3; i++){
+         indicator.Visible = true;
+         sleep(400);
+         indicator.Visible = false;
+         sleep(400);
+       }     
+     }
+   } catch(er){widget_reload();}
+widget_OnLoad = 0;
 }
 
 function WeatherIconOnDblClick(day){
@@ -352,6 +362,7 @@ function widgetOnLoad(){
     WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
     WeatherIcon_click_ch(WeatherIcon_DblClick);
     menuitem20.checked = GetValue("menuitem20.checked",true);
+    menuitem21.checked = GetValue("menuitem21.checked",true);
     widget_OnLoad = 0;
   } catch(er){widget_reload()}
 }
@@ -459,5 +470,15 @@ function menuitem20OnClick(Sender){
     menuitem20.checked = false;
   }   
   setValue('menuitem20.checked',menuitem20.checked);
+  saveIni;
+}
+
+function menuitem21OnClick(Sender){
+  if(menuitem21.checked==false){
+    menuitem21.checked = true;
+  }else{
+    menuitem21.checked = false;
+  }  
+  setValue('menuitem21.checked',menuitem21.checked);
   saveIni;
 }

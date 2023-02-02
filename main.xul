@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xul Version="1.0">
 	<script type="text/javascript" src="script.js"/>
-	<window type="widget" width="596" height="261" onLoad="widgetOnLoad" onLeave="Forced_always_below" onEnter="widgetOnEnter" onPopupMenu="Forced_always_below" onResize="Forced_always_below" onShow="Forced_always_below" onMove="Forced_always_below" onFlipToBack="Forced_always_below" onFlipToFront="Forced_always_below">
+	<window type="widget" width="596" height="261" onLoad="widgetOnLoad" onLeave="Forced_always_below" onEnter="widgetOnEnter" onPopupMenu="Forced_always_below" onResize="Forced_always_below" onMove="Forced_always_below" onFlipToBack="Forced_always_below" onFlipToFront="Forced_always_below" onWidgetDeactivate="Forced_always_below">
 		<side name="front">
 			<image name="backgroundImage" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
-				<image name="indicator" left="567" top="9" width="20" height="20" src="Images\Badge2.png" wrapMode="1" core="accweathercore1" coreFormat="${IsLoadingObj}" opacity=".4" locked="true" hAlign="1" vAlign="1"/>
+				<image name="indicator" left="567" top="9" width="20" height="20" src="Images\Badge2.png" wrapMode="1" opacity=".4" locked="true" hAlign="1" vAlign="1" visible="false"/>
 				<layer name="layer4" left="257" top="71" width="111" height="31" onDblClick="!Flip" locked="true">
 					<text name="min_temp" width="37" height="15" font.family="Tahoma" font.size="12" font.fill.color="255,255,255,255" core="accweathercore1" font.style="Bold" vAlign="0" font.antiAlias="true" text="min:" top="15" onDblClick="!Flip" locked="true"/>
 					<text name="max_temp" width="37" height="15" font.family="Tahoma" font.size="12" font.fill.color="255,255,255,255" core="accweathercore1" font.style="Bold" vAlign="0" font.antiAlias="true" text="max:" onDblClick="!Flip" locked="true"/>
@@ -20,43 +20,43 @@
 					<layer name="layer14" left="498" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day8_highTemp" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" top="70" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" font.antiAlias="true" onDblClick="Day8_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day8_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day8_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day8_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" font.antiAlias="false" core="accweathercore1" scale=".9" onDblClick="Day8_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day8_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" font.antiAlias="false" core="accweathercore1" scale=".9" onDblClick="Day8_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 8"/>
 						<image name="Day8_WeatherIcon" width="83" height="71" animateChange.duration="1.5" animateChange.switchEffect="22" animateChange.occasion="2" enabledAnimateChange="True" animateChange.dynamicEffect="6" hAlign="1" vAlign="1" wrapMode="2" stretchMargins="0,0,0,78" core="accweathercore1" showHint="true" onDblClick="Day8_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer13" left="415" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day7_highTemp" top="70" width="41" height="16" font.family="Tahoma" font.fill.color="255,255,255,255" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day7_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day7_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day7_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day7_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day7_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day7_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day7_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 7"/>
 						<image name="Day7_WeatherIcon" width="83" height="71" animateChange.duration="1.5" animateChange.switchEffect="22" animateChange.occasion="2" enabledAnimateChange="True" animateChange.dynamicEffect="6" wrapMode="2" hAlign="1" vAlign="1" showHint="True" stretchMargins="0,0,0,78" core="accweathercore1" onDblClick="Day7_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer12" left="332" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day6_highTemp" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" top="70" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day6_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day6_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day6_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day6_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day6_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day6_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day6_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 6"/>
 						<image name="Day6_WeatherIcon" width="83" height="71" animateChange.duration="1.5" animateChange.switchEffect="22" animateChange.occasion="2" enabledAnimateChange="True" animateChange.dynamicEffect="6" wrapMode="2" hAlign="1" vAlign="1" showHint="True" stretchMargins="0,0,0,78" core="accweathercore1" onDblClick="Day6_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer11" left="249" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day5_highTemp" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" top="70" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day5_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day5_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day5_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day5_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day5_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day5_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day5_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 5"/>
 						<image name="Day5_WeatherIcon" width="83" height="71" animateChange.duration="1.3" animateChange.switchEffect="22" animateChange.dynamicEffect="4" animateChange.occasion="2" enabledAnimateChange="True" wrapMode="2" hAlign="1" vAlign="1" showHint="True" stretchMargins="0,0,0,78" core="accweathercore1" onDblClick="Day5_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer10" left="166" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day4_highTemp" top="70" width="41" height="16" font.family="Tahoma" font.fill.color="255,255,255,255" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day4_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day4_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day4_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day4_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day4_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day4_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day4_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 4"/>
 						<image name="Day4_WeatherIcon" width="83" height="71" animateChange.duration="1.1" animateChange.switchEffect="22" animateChange.dynamicEffect="3" animateChange.occasion="2" enabledAnimateChange="True" wrapMode="2" hAlign="1" vAlign="1" showHint="True" stretchMargins="0,0,0,78" core="accweathercore1" onDblClick="Day4_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer9" left="83" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day3_highTemp" top="70" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21" locked="true"/>
 						<text name="Day3_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" core="accweathercore1" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day3_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day3_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" core="accweathercore1" scale=".9" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 3"/>
 						<image name="Day3_WeatherIcon" width="83" height="71" enabledAnimateChange="True" animateChange.switchEffect="22" animateChange.duration=".9" animateChange.dynamicEffect="2" animateChange.occasion="2" wrapMode="2" hAlign="1" vAlign="1" showHint="True" stretchMargins="0,0,0,78" core="accweathercore1" onDblClick="Day3_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 					<layer name="layer8" width="83" height="100" locked="true" showHint="true" onDblClick="!Flip" core="accweathercore1" onMouseEnter="OnMouseEnter">
 						<text name="Day2_lowTemp" left="41" top="70" width="42" height="16" font.fill.color="138,138,138,255" font.family="Tahoma" font.size="14" font.style="Bold" text="/0°" locked="true" core="accweathercore1" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21"/>
 						<text name="Day2_highTemp" top="70" width="41" height="16" font.fill.color="255,255,255,255" font.family="Tahoma" font.size="14" font.style="Bold" hAlign="2" text="0°" core="accweathercore1" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21" locked="true"/>
-						<text name="Day2_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" scale=".9" font.antiAlias="true" core="accweathercore1" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21" locked="true"/>
+						<text name="Day2_Date" top="86" width="93" height="15" font.family="Tahoma" font.fill.color="255,255,255,255" hAlign="0" font.size="12" vAlign="0" scale=".9" font.antiAlias="true" core="accweathercore1" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21" locked="true" text="день 2"/>
 						<image name="Day2_WeatherIcon" width="83" height="71" enabledAnimateChange="True" animateChange.duration=".7" animateChange.switchEffect="22" animateChange.occasion="2" hAlign="1" vAlign="1" stretchMargins="0,0,0,78" wrapMode="2" showInDefaultImage="false" core="accweathercore1" showHint="true" linkParam="291312" onDblClick="Day2_WeatherIconOnDblClick" cursor="-21" locked="true" src="wth\na.png"/>
 					</layer>
 				</layer>
@@ -109,14 +109,16 @@
 	</window>
 	<menu>
 		<item name="menuitem14" caption="Настройки виджета">
+			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ChangeLocation"/>
+			<item name="menuitem22" caption="-"/>
 			<item name="menuitem9" caption="Набор иконок погоды">
 				<item name="menuitem10" caption="Набор 1" onClick="menuitem10OnClick"/>
 				<item name="menuitem11" caption="Набор 2" onClick="menuitem11OnClick"/>
 				<item name="menuitem12" caption="Набор 3" onClick="menuitem12OnClick"/>
 				<item name="menuitem13" caption="Набор 4" onClick="menuitem13OnClick"/>
 			</item>
-			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ChangeLocation"/>
 			<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
+			<item name="menuitem21" caption="Индикатор обновления погоды" onClick="menuitem21OnClick"/>
 			<item name="menuitem19" caption="Двойной клик на погодных иконках - открыть сайт" onClick="menuitem19OnClick"/>
 			<item name="menuitem20" caption="Принудительно ниже всех окон" onClick="menuitem20OnClick"/>
 			<item name="menuitem3" caption="-"/>
