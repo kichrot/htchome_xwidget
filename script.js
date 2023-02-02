@@ -125,18 +125,20 @@ function widget_reload(){
 
 function checkDateTime(){
   try {
+    var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
     var  core_Day = datetimecore1.get("%Day");
     var  core_Hour = datetimecore1.get("%Hour");
     var  core_Minute = Number(datetimecore1.get("%Minute"));
-    if(UpdateWeather_day!=core_Day){
-      accweathercore1.cmd(null,"!UpdateWeather");
-      return(0);
-    }
-    if(UpdateWeather_hour!=core_Hour){
-      accweathercore1.cmd(null,"!UpdateWeather");
-      return(0);
-    }
-    var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
+    if(UpdateWeather_minute_15!=15 || UpdateWeather_minute_15!=30 || UpdateWeather_minute_15!=45 || UpdateWeather_minute_15!=60){
+      if(UpdateWeather_day!=core_Day){
+        accweathercore1.cmd(null,"!UpdateWeather");
+        return(0);
+      }
+      if(UpdateWeather_hour!=core_Hour){
+        accweathercore1.cmd(null,"!UpdateWeather");
+        return(0);
+      }
+    }         
     if(core_Minute>UpdateWeather_minute_15){
       widget_reload();
     }
