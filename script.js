@@ -7,6 +7,12 @@ var UpdateWeather_hour;
 var UpdateWeather_minute;
 
 
+function Forced_always_below(){
+  if(menuitem20.checked){
+    widget.WindowZPosition = -1;
+  }
+}
+
 function displacementDay() {
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
         displacement_Day = 0;
@@ -122,29 +128,33 @@ function widget_reload(){
   var wsc = new ActiveXObject("WScript.Shell");
   widget.ForceToFround();
   wsc.SendKeys("{f5}");
+  Forced_always_below();
 }
 
 function checkDateTime(){
   try {
     var  UpdateWeather_minute_15 = UpdateWeather_minute + 15;
-    if(UpdateWeather_minute_15>60){
-      UpdateWeather_minute_15 = UpdateWeather_minute_15 - 60;
-    }
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
-    var core_Minute = cur_Date.getMinutes();
-    if(core_Minute>UpdateWeather_minute_15){
-      widget_reload();
+    var core_Minute = cur_Date.getHours() * 60 + cur_Date.getMinutes();
+    if(UpdateWeather_day==core_Day){
+      if(core_Minute>UpdateWeather_minute_15){
+        widget_reload();
+      }
     }
+    if(UpdateWeather_day!=core_Day){
+      if(core_Minute==0){
+        accweathercore1.cmd(null,"!UpdateWeather");
+        return(0);
+      } else{
+        widget_reload();
+      }
+    } 
     if(UpdateWeather_hour!=core_Hour){
       accweathercore1.cmd(null,"!UpdateWeather");
       return(0);
-    }   
-    if(UpdateWeather_day!=core_Day){
-      accweathercore1.cmd(null,"!UpdateWeather");
-      return(0);
-    }      
+    }  
   } catch(er){widget_reload()}
 }
 
@@ -161,7 +171,7 @@ function accweathercore1OnUpdate(Sender){
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
-    UpdateWeather_minute = cur_Date.getMinutes();
+    UpdateWeather_minute = cur_Date.getHours() * 60 + cur_Date.getMinutes();
     if(menuitem21.checked){
       for(var i = 0; i < 3; i++){
         indicator.Visible = true;
@@ -368,6 +378,7 @@ function widgetOnLoad(){
     menuitem20.checked = GetValue("menuitem20.checked",true);
     menuitem21.checked = GetValue("menuitem21.checked",true);
   } catch(er){widget_reload()}
+  Forced_always_below()
   widget_OnLoad = 0;
 }
 
@@ -452,16 +463,11 @@ function menuitem19OnClick(Sender){
 }
 
 function cityNameOnChange(Sender){
-  sleep(3000);
-  widget_reload();  
+  if(widget_OnLoad==0){
+    sleep(3000);
+    widget_reload();
+  }  
 } 
-
-function Forced_always_below(){
-  //widget.WindowZPosition = widget.WindowZPosition;
-  if(menuitem20.checked){
-    widget.WindowZPosition = -1;
-  }
-}
 
 function widgetOnEnter(){
   widget.SetFocus();
