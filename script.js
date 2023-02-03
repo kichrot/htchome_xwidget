@@ -1,10 +1,11 @@
 var widget_OnLoad = 1;
 var displacement_Day = 0;
 var wth_icon = "1";
-var UpdateWeather_day = datetimecore1.get("%Day");
-var UpdateWeather_hour = datetimecore1.get("%Hour");
-var UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
 var WeatherIcon_DblClick = "0";
+var UpdateWeather_day;
+var UpdateWeather_hour;
+var UpdateWeather_minute;
+
 
 function displacementDay() {
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
@@ -125,23 +126,25 @@ function widget_reload(){
 
 function checkDateTime(){
   try {
-    var  UpdateWeather_minute_15 = Number(UpdateWeather_minute)+15;
-    var  core_Day = datetimecore1.get("%Day");
-    var  core_Hour = datetimecore1.get("%Hour");
-    var  core_Minute = Number(datetimecore1.get("%Minute"));
-    if(UpdateWeather_minute_15!=15 || UpdateWeather_minute_15!=30 || UpdateWeather_minute_15!=45 || UpdateWeather_minute_15!=60){
-      if(UpdateWeather_day!=core_Day){
-        accweathercore1.cmd(null,"!UpdateWeather");
-        return(0);
-      }
-      if(UpdateWeather_hour!=core_Hour){
-        accweathercore1.cmd(null,"!UpdateWeather");
-        return(0);
-      }
-    }         
+    var  UpdateWeather_minute_15 = UpdateWeather_minute + 15;
+    if(UpdateWeather_minute_15>60){
+      UpdateWeather_minute_15 = UpdateWeather_minute_15 - 60;
+    }
+    var cur_Date = new Date();
+    var core_Day =  cur_Date.getDate();
+    var core_Hour = cur_Date.getHours();
+    var core_Minute = cur_Date.getMinutes();
     if(core_Minute>UpdateWeather_minute_15){
       widget_reload();
     }
+    if(UpdateWeather_hour!=core_Hour){
+      accweathercore1.cmd(null,"!UpdateWeather");
+      return(0);
+    }   
+    if(UpdateWeather_day!=core_Day){
+      accweathercore1.cmd(null,"!UpdateWeather");
+      return(0);
+    }      
   } catch(er){widget_reload()}
 }
 
@@ -152,23 +155,22 @@ function layer2OnChange(Sender){
 }
 
 function accweathercore1OnUpdate(Sender){
-   widget_OnLoad = 1;  
-   try{
-     displacementDay();
-     curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
-     UpdateWeather_day = datetimecore1.get("%Day");
-     UpdateWeather_hour = datetimecore1.get("%Hour");
-     UpdateWeather_minute = Number(datetimecore1.get("%Minute"));
-     if(menuitem21.checked){
-       for(var i = 0; i < 3; i++){
-         indicator.Visible = true;
-         sleep(400);
-         indicator.Visible = false;
-         sleep(400);
-       }     
-     }
-   } catch(er){widget_reload();}
-widget_OnLoad = 0;
+  try{
+    displacementDay();
+    curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
+    var cur_Date = new Date();
+    UpdateWeather_day = cur_Date.getDate();
+    UpdateWeather_hour = cur_Date.getHours();
+    UpdateWeather_minute = cur_Date.getMinutes();
+    if(menuitem21.checked){
+      for(var i = 0; i < 3; i++){
+        indicator.Visible = true;
+        sleep(400);
+        indicator.Visible = false;
+        sleep(400);
+      }     
+    }
+  } catch(er){widget_reload();}
 }
 
 function WeatherIconOnDblClick(day){
@@ -365,8 +367,8 @@ function widgetOnLoad(){
     WeatherIcon_click_ch(WeatherIcon_DblClick);
     menuitem20.checked = GetValue("menuitem20.checked",true);
     menuitem21.checked = GetValue("menuitem21.checked",true);
-    widget_OnLoad = 0;
   } catch(er){widget_reload()}
+  widget_OnLoad = 0;
 }
 
 function menuitem10OnClick(Sender){
@@ -450,6 +452,7 @@ function menuitem19OnClick(Sender){
 }
 
 function cityNameOnChange(Sender){
+  sleep(3000);
   widget_reload();  
 } 
 
