@@ -137,14 +137,14 @@ function checkDateTime(){
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
-    var core_Minute = cur_Date.getHours() * 60 + cur_Date.getMinutes();
+    var core_Minute = Math.round(cur_Date.getTime()/60000);
     if(UpdateWeather_day==core_Day){
       if(core_Minute>UpdateWeather_minute_interval){
         widget_reload();
       }
     }
     if(UpdateWeather_day!=core_Day){
-      if(core_Minute==0){
+      if(core_Hour==0){
         accweathercore1.cmd(null,"!UpdateWeather");
         return(0);
       } else{
@@ -171,7 +171,7 @@ function accweathercore1OnUpdate(Sender){
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
-    UpdateWeather_minute = cur_Date.getHours() * 60 + cur_Date.getMinutes();
+    UpdateWeather_minute = Math.round(cur_Date.getTime()/60000);
     if(menuitem21.checked){
       for(var i = 0; i < 3; i++){
         indicator.Visible = true;
