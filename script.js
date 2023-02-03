@@ -133,13 +133,13 @@ function widget_reload(){
 
 function checkDateTime(){
   try {
-    var  UpdateWeather_minute_15 = UpdateWeather_minute + 15;
+    var UpdateWeather_minute_interval = UpdateWeather_minute + (GetValue("accweathercore1.interval",900000)/60000); 
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
     var core_Minute = cur_Date.getHours() * 60 + cur_Date.getMinutes();
     if(UpdateWeather_day==core_Day){
-      if(core_Minute>UpdateWeather_minute_15){
+      if(core_Minute>UpdateWeather_minute_interval){
         widget_reload();
       }
     }
