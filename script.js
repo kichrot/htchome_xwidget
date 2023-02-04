@@ -13,7 +13,15 @@ function Forced_always_below(){
   }
 }
 
+function widget_reload(){
+  var wsc = new ActiveXObject("WScript.Shell");
+  widget.ForceToFround();
+  wsc.SendKeys("{f5}");
+  Forced_always_below();
+}
+
 function displacementDay() {
+  try{
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
         displacement_Day = 0;
         Day1_lowTemp.coreFormat = "${lowTemp1}°";
@@ -118,17 +126,11 @@ function displacementDay() {
         layer13.Hint = accweathercore1.get("%weatherText8");
         layer14.Hint = accweathercore1.get("%weatherText9");
     }
+  }catch(er){widget_reload()}
 }
 
 function layer1OnChange(Sender){
   numbimage1.values = Sender.value;
-}
-
-function widget_reload(){
-  var wsc = new ActiveXObject("WScript.Shell");
-  widget.ForceToFround();
-  wsc.SendKeys("{f5}");
-  Forced_always_below();
 }
 
 function checkDateTime(){
@@ -138,24 +140,15 @@ function checkDateTime(){
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
     var core_Minute = Math.round(cur_Date.getTime()/60000);
-    if(UpdateWeather_day==core_Day){
-      if(core_Minute>UpdateWeather_minute_interval){
-        widget_reload();
-      }
-    }
-    if(UpdateWeather_day!=core_Day){
-      if(core_Hour==0){
+    if(core_Minute>UpdateWeather_minute_interval){
+        //widget_reload();
         accweathercore1.cmd(null,"!UpdateWeather");
         return(0);
-      } else{
-        widget_reload();
-      }
-    } 
-    if(UpdateWeather_hour!=core_Hour){
+    }
+    if(UpdateWeather_day!=core_Day || UpdateWeather_hour!=core_Hour){
       accweathercore1.cmd(null,"!UpdateWeather");
-      return(0);
-    }  
-  } catch(er){widget_reload()}
+    } 
+  } catch(er){widget_reload();}
 }
 
 function layer2OnChange(Sender){

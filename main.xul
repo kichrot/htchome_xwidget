@@ -136,7 +136,7 @@
 		<item name="menuitem15" caption="Перезагрузить виджет" onClick="widget_reload"/>
 	</menu>
 	<cores>
-		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
+		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate"/>
 		<dateTimeCore name="datetimecore1" timeZoneName=" Baghdad"/>
 	</cores>
 	<hotspots/>
