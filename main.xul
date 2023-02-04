@@ -101,8 +101,10 @@
 Закат Луны: ${moonSet} " font.antiAlias="false" onDblClick="!Flip" locked="true"/>
 				</layer>
 				<layer name="layer7" width="560" height="31" left="24" top="223" locked="true">
-					<text name="serverUpgr" width="560" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" vAlign="0" onDblClick="!Flip" locked="true" font.size="14"/>
-					<text name="curWeatherUpgr" width="560" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" top="15" vAlign="0" onDblClick="!Flip" core="datetimecore1" locked="true" text="Последнее обновление данных виджета с сервера &quot;www.accuweather.com&quot;:" font.size="14"/>
+					<text name="serverUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" vAlign="0" onDblClick="!Flip" font.size="14" left="509" locked="true" width="50" core="accweathercore1" coreFormat="${updateTime} " hAlign="2"/>
+					<text name="curWeatherUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" top="15" vAlign="0" onDblClick="!Flip" core="datetimecore1" font.size="14" left="509" locked="true" width="50" hAlign="2"/>
+					<text name="serverUpgr" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" vAlign="0" onDblClick="!Flip" locked="true" font.size="14" text="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: "/>
+					<text name="curWeatherUpgrText" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" top="15" vAlign="0" onDblClick="!Flip" locked="true" text="Последнее обновление данных виджета с сервера &quot;www.accuweather.com&quot;:" font.size="14"/>
 				</layer>
 			</image>
 		</side>
@@ -136,7 +138,7 @@
 		<item name="menuitem15" caption="Перезагрузить виджет" onClick="widget_reload"/>
 	</menu>
 	<cores>
-		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate"/>
+		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
 		<dateTimeCore name="datetimecore1" timeZoneName=" Baghdad"/>
 	</cores>
 	<hotspots/>

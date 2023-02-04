@@ -5,6 +5,7 @@ var WeatherIcon_DblClick = "0";
 var UpdateWeather_day;
 var UpdateWeather_hour;
 var UpdateWeather_minute;
+var accweathercore_interval = accweathercore1.Interval;
 
 
 function Forced_always_below(){
@@ -135,18 +136,23 @@ function layer1OnChange(Sender){
 
 function checkDateTime(){
   try {
-    var UpdateWeather_minute_interval = UpdateWeather_minute + (GetValue("accweathercore1.interval",900000)/60000); 
+    var UpdateWeather_minute_interval = UpdateWeather_minute + (accweathercore_interval/60000); 
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
     var core_Minute = Math.round(cur_Date.getTime()/60000);
     if(core_Minute>UpdateWeather_minute_interval){
-        //widget_reload();
-        accweathercore1.cmd(null,"!UpdateWeather");
+      var Minute_Up1 = curWeatherUpgrTime.text;
+      accweathercore1.cmd(null,"!UpdateWeather");
+      sleep(1000);
+      var Minute_Up2 = curWeatherUpgrTime.text;
+        if(Minute_Up1==Minute_Up2 || Minute_Up2==""){
+          widget_reload();
+        }
         return(0);
     }
     if(UpdateWeather_day!=core_Day || UpdateWeather_hour!=core_Hour){
-      accweathercore1.cmd(null,"!UpdateWeather");
+       accweathercore1.cmd(null,"!UpdateWeather");
     } 
   } catch(er){widget_reload();}
 }
@@ -160,7 +166,8 @@ function layer2OnChange(Sender){
 function accweathercore1OnUpdate(Sender){
   try{
     displacementDay();
-    curWeatherUpgr.text = 'Последнее обновление данных виджета с сервера "www.accuweather.com": '+datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
+    curWeatherUpgrTime.text = datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
+    accweathercore_interval = accweathercore1.Interval;
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
