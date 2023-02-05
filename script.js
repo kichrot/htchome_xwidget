@@ -532,7 +532,13 @@ function menuitem21OnClick(Sender){
   saveIni;
 }
 
-function setValue_menuitem_24_29(interval){
+function setValue_menuitem_24_29(ch24, ch25, ch26, ch27, ch28, ch29, interval){
+  menuitem24.checked = ch24;
+  menuitem25.checked = ch25;
+  menuitem26.checked = ch26;
+  menuitem27.checked = ch27;
+  menuitem28.checked = ch28;
+  menuitem29.checked = ch29;
   Setvalue("accweathercore1.interval",interval);
   SaveValue();
   setValue('menuitem24.checked',menuitem24.checked);
@@ -547,61 +553,25 @@ function setValue_menuitem_24_29(interval){
 }
 
 function menuitem24OnClick(Sender){
-  menuitem24.checked = true;
-  menuitem25.checked = false;
-  menuitem26.checked = false;
-  menuitem27.checked = false;
-  menuitem28.checked = false;
-  menuitem29.checked = false; 
-  setValue_menuitem_24_29(300000); 
+  setValue_menuitem_24_29(true, false, false, false, false, false, 300000);
 }
 
 function menuitem25OnClick(Sender){
-  menuitem24.checked = false;
-  menuitem25.checked = true;
-  menuitem26.checked = false;
-  menuitem27.checked = false;
-  menuitem28.checked = false;
-  menuitem29.checked = false;  
-  setValue_menuitem_24_29(600000);
+  setValue_menuitem_24_29(false, true, false, false, false, false, 600000);  
 }
 
 function menuitem26OnClick(Sender){
-  menuitem24.checked = false;
-  menuitem25.checked = false;
-  menuitem26.checked = true;
-  menuitem27.checked = false;
-  menuitem28.checked = false;
-  menuitem29.checked = false;
-  setValue_menuitem_24_29(900000);
+  setValue_menuitem_24_29(false, false, true, false, false, false, 900000);
 }
 
 function menuitem27OnClick(Sender){
-  menuitem24.checked = false;
-  menuitem25.checked = false;
-  menuitem26.checked = false;
-  menuitem27.checked = true;
-  menuitem28.checked = false;
-  menuitem29.checked = false;
-  setValue_menuitem_24_29(1200000);
+  setValue_menuitem_24_29(false, false, false, true, false, false, 1200000);
 }
 
 function menuitem28OnClick(Sender){
-  menuitem24.checked = false;
-  menuitem25.checked = false;
-  menuitem26.checked = false;
-  menuitem27.checked = false;
-  menuitem28.checked = true;
-  menuitem29.checked = false;
-  setValue_menuitem_24_29(1800000);
+  setValue_menuitem_24_29(false, false, false, false, true, false, 1800000);
 }
 
 function menuitem29OnClick(Sender){
-  menuitem24.checked = false;
-  menuitem25.checked = false;
-  menuitem26.checked = false;
-  menuitem27.checked = false;
-  menuitem28.checked = false;
-  menuitem29.checked = true;
-  setValue_menuitem_24_29(3600000); 
+  setValue_menuitem_24_29(false, false, false, false, false, true, 3600000); 
 }
