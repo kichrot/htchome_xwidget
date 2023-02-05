@@ -87,7 +87,7 @@
 
 Ультрафиолетовый индекс: ${curUVIndex} (${curUVText}) 
                   
-Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="false" onDblClick="!Flip" locked="true"/>
+Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="true" onDblClick="!Flip" locked="true"/>
 				</layer>
 				<layer name="layer6" left="313" top="8" width="271" height="205" onDblClick="!Flip" locked="true">
 					<text name="curWeather2" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%
@@ -98,13 +98,13 @@
 
 Закат Солнца: ${sunSet}
 
-Закат Луны: ${moonSet} " font.antiAlias="false" onDblClick="!Flip" locked="true"/>
+Закат Луны: ${moonSet} " font.antiAlias="true" onDblClick="!Flip" locked="true"/>
 				</layer>
 				<layer name="layer7" width="560" height="31" left="24" top="223" locked="true">
-					<text name="serverUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" vAlign="0" onDblClick="!Flip" font.size="14" left="509" locked="true" core="accweathercore1" coreFormat="${updateTime} " hAlign="2"/>
-					<text name="curWeatherUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" top="15" vAlign="0" onDblClick="!Flip" core="datetimecore1" font.size="14" left="509" locked="true" hAlign="2"/>
-					<text name="serverUpgr" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" vAlign="0" onDblClick="!Flip" locked="true" font.size="14" text="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: "/>
-					<text name="curWeatherUpgrText" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="false" top="15" vAlign="0" onDblClick="!Flip" locked="true" text="Последнее обновление данных виджета с сервера &quot;www.accuweather.com&quot;:" font.size="14"/>
+					<text name="serverUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" font.size="14" left="509" locked="true" core="accweathercore1" coreFormat="${updateTime} " hAlign="2"/>
+					<text name="curWeatherUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" top="15" vAlign="0" onDblClick="!Flip" core="datetimecore1" font.size="14" left="509" locked="true" hAlign="2"/>
+					<text name="serverUpgr" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" locked="true" font.size="14" text="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: "/>
+					<text name="curWeatherUpgrText" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" top="15" vAlign="0" onDblClick="!Flip" locked="true" text="Последнее обновление данных виджета с сервера &quot;www.accuweather.com&quot;:" font.size="14"/>
 				</layer>
 			</image>
 		</side>
@@ -113,12 +113,12 @@
 		<item name="menuitem14" caption="Настройки виджета">
 			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ChangeLocation"/>
 			<item name="menuitem23" caption="Интервал обновления данных о погоде">
-				<item name="menuitem24" caption="5 минут"/>
-				<item name="menuitem25" caption="10 минут"/>
-				<item name="menuitem26" caption="15 минут"/>
-				<item name="menuitem27" caption="20 минут"/>
-				<item name="menuitem28" caption="30 минут"/>
-				<item name="menuitem29" caption="1 час"/>
+				<item name="menuitem24" caption="5 минут" onClick="menuitem24OnClick"/>
+				<item name="menuitem25" caption="10 минут" onClick="menuitem25OnClick"/>
+				<item name="menuitem26" caption="15 минут" onClick="menuitem26OnClick"/>
+				<item name="menuitem27" caption="20 минут" onClick="menuitem27OnClick"/>
+				<item name="menuitem28" caption="30 минут" onClick="menuitem28OnClick"/>
+				<item name="menuitem29" caption="1 час" onClick="menuitem29OnClick"/>
 			</item>
 			<item name="menuitem22" caption="-"/>
 			<item name="menuitem9" caption="Набор иконок погоды">
@@ -146,7 +146,7 @@
 		<item name="menuitem15" caption="Перезагрузить виджет" onClick="widget_reload"/>
 	</menu>
 	<cores>
-		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="900000"/>
+		<accWeatherCore name="accweathercore1" isCelcius="true" onUpdate="accweathercore1OnUpdate" interval="60000"/>
 		<dateTimeCore name="datetimecore1" timeZoneName=" Baghdad"/>
 	</cores>
 	<hotspots/>

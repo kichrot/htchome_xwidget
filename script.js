@@ -163,12 +163,11 @@ function checkDateTime(){
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
-    //var core_Minute = Math.round(cur_Date.getTime()/60000);
     var core_Minute = cur_Date.getTime()/60000;
     if(core_Minute>UpdateWeather_minute_interval){
       var Minute_Up1 = curWeatherUpgrTime.text;
       accweathercore1.cmd(null,"!UpdateWeather");
-      sleep(1000);
+      sleep(2000);
       var Minute_Up2 = curWeatherUpgrTime.text;
         if(Minute_Up1==Minute_Up2 || Minute_Up2==""){
           widget_reload();
@@ -195,7 +194,6 @@ function accweathercore1OnUpdate(Sender){
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
-    //UpdateWeather_minute = Math.round(cur_Date.getTime()/60000);
     UpdateWeather_minute = cur_Date.getTime()/60000;
     if(menuitem21.checked){
       for(var i = 0; i < 3; i++){
@@ -340,8 +338,6 @@ function WeatherIcon_DblClick_ch(){
 
 function widgetOnLoad(){
   try{
-    //Setvalue("accweathercore1.interval","600000");
-    //SaveValue();
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
       displacement_Day = 1;
     }else{
@@ -382,8 +378,44 @@ function widgetOnLoad(){
     WeatherIcon_click_ch(WeatherIcon_DblClick);
     menuitem20.checked = GetValue("menuitem20.checked",true);
     menuitem21.checked = GetValue("menuitem21.checked",true);
+    menuitem24.checked = getValue('menuitem24.checked', false);
+    menuitem25.checked = getValue('menuitem25.checked', false);
+    menuitem26.checked = getValue('menuitem26.checked', true);
+    menuitem27.checked = getValue('menuitem27.checked', false);
+    menuitem28.checked = getValue('menuitem28.checked', false);
+    menuitem29.checked = getValue('menuitem29.checked', false);
+    if(menuitem24.checked){
+      Setvalue("accweathercore1.interval","300000");
+      SaveValue();
+      accweathercore1.interval = 300000;
+    }
+    if(menuitem25.checked){
+      Setvalue("accweathercore1.interval","600000");
+      SaveValue();
+      accweathercore1.interval = 600000;
+    }
+    if(menuitem26.checked){
+      Setvalue("accweathercore1.interval","900000");
+      SaveValue();
+      accweathercore1.interval = 900000;
+    }
+    if(menuitem27.checked){
+      Setvalue("accweathercore1.interval","1200000");
+      SaveValue();
+      accweathercore1.interval = 1200000;
+    }
+    if(menuitem28.checked){
+      Setvalue("accweathercore1.interval","1800000");
+      SaveValue();
+      accweathercore1.interval = 1800000;
+    }
+    if(menuitem29.checked){
+      Setvalue("accweathercore1.interval","3600000");
+      SaveValue();
+      accweathercore1.interval = 3600000;
+    }
+    Forced_always_below()
   } catch(er){widget_reload()}
-  Forced_always_below()
   widget_OnLoad = 0;
 }
 
@@ -497,4 +529,118 @@ function menuitem21OnClick(Sender){
   }  
   setValue('menuitem21.checked',menuitem21.checked);
   saveIni;
+}
+
+function menuitem24OnClick(Sender){
+  menuitem24.checked = true;
+  Setvalue("accweathercore1.interval","300000");
+  SaveValue();
+  menuitem25.checked = false;
+  menuitem26.checked = false;
+  menuitem27.checked = false;
+  menuitem28.checked = false;
+  menuitem29.checked = false; 
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni;
+  accweathercore1.interval = 300000; 
+}
+
+function menuitem25OnClick(Sender){
+  menuitem24.checked = false;
+  menuitem25.checked = true;
+  Setvalue("accweathercore1.interval","600000");
+  SaveValue();
+  menuitem26.checked = false;
+  menuitem27.checked = false;
+  menuitem28.checked = false;
+  menuitem29.checked = false;  
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni;
+  accweathercore1.interval = 600000;
+}
+
+function menuitem26OnClick(Sender){
+  menuitem24.checked = false;
+  menuitem25.checked = false;
+  menuitem26.checked = true;
+  Setvalue("accweathercore1.interval","900000");
+  SaveValue();
+  menuitem27.checked = false;
+  menuitem28.checked = false;
+  menuitem29.checked = false;
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni;  
+  accweathercore1.interval = 900000;
+}
+
+function menuitem27OnClick(Sender){
+  menuitem24.checked = false;
+  menuitem25.checked = false;
+  menuitem26.checked = false;
+  menuitem27.checked = true;
+  Setvalue("accweathercore1.interval","1200000");
+  SaveValue();
+  menuitem28.checked = false;
+  menuitem29.checked = false;
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni;  
+  accweathercore1.interval = 1200000;
+}
+
+function menuitem28OnClick(Sender){
+  menuitem24.checked = false;
+  menuitem25.checked = false;
+  menuitem26.checked = false;
+  menuitem27.checked = false;
+  menuitem28.checked = true;
+  Setvalue("accweathercore1.interval","1800000");
+  SaveValue();
+  menuitem29.checked = false;
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni; 
+  accweathercore1.interval = 1800000; 
+}
+
+function menuitem29OnClick(Sender){
+  menuitem24.checked = false;
+  menuitem25.checked = false;
+  menuitem26.checked = false;
+  menuitem27.checked = false;
+  menuitem28.checked = false;
+  menuitem29.checked = true;
+  Setvalue("accweathercore1.interval","3600000");
+  SaveValue();
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni; 
+  accweathercore1.interval = 3600000; 
 }
