@@ -532,64 +532,48 @@ function menuitem21OnClick(Sender){
   saveIni;
 }
 
+function setValue_menuitem_24_29(interval){
+  Setvalue("accweathercore1.interval",interval);
+  SaveValue();
+  setValue('menuitem24.checked',menuitem24.checked);
+  setValue('menuitem25.checked',menuitem25.checked);
+  setValue('menuitem26.checked',menuitem26.checked);
+  setValue('menuitem27.checked',menuitem27.checked);
+  setValue('menuitem28.checked',menuitem28.checked);
+  setValue('menuitem29.checked',menuitem29.checked);
+  saveIni;
+  accweathercore1.interval = interval;
+  accweathercore_interval = accweathercore1.Interval;
+}
+
 function menuitem24OnClick(Sender){
   menuitem24.checked = true;
-  Setvalue("accweathercore1.interval","300000");
-  SaveValue();
   menuitem25.checked = false;
   menuitem26.checked = false;
   menuitem27.checked = false;
   menuitem28.checked = false;
   menuitem29.checked = false; 
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni;
-  accweathercore1.interval = 300000;
-  accweathercore_interval = accweathercore1.Interval; 
+  setValue_menuitem_24_29(300000); 
 }
 
 function menuitem25OnClick(Sender){
   menuitem24.checked = false;
   menuitem25.checked = true;
-  Setvalue("accweathercore1.interval","600000");
-  SaveValue();
   menuitem26.checked = false;
   menuitem27.checked = false;
   menuitem28.checked = false;
   menuitem29.checked = false;  
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni;
-  accweathercore1.interval = 600000;
-  accweathercore_interval = accweathercore1.Interval;
+  setValue_menuitem_24_29(600000);
 }
 
 function menuitem26OnClick(Sender){
   menuitem24.checked = false;
   menuitem25.checked = false;
   menuitem26.checked = true;
-  Setvalue("accweathercore1.interval","900000");
-  SaveValue();
   menuitem27.checked = false;
   menuitem28.checked = false;
   menuitem29.checked = false;
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni;  
-  accweathercore1.interval = 900000;
-  accweathercore_interval = accweathercore1.Interval;
+  setValue_menuitem_24_29(900000);
 }
 
 function menuitem27OnClick(Sender){
@@ -597,19 +581,9 @@ function menuitem27OnClick(Sender){
   menuitem25.checked = false;
   menuitem26.checked = false;
   menuitem27.checked = true;
-  Setvalue("accweathercore1.interval","1200000");
-  SaveValue();
   menuitem28.checked = false;
   menuitem29.checked = false;
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni;  
-  accweathercore1.interval = 1200000;
-  accweathercore_interval = accweathercore1.Interval;
+  setValue_menuitem_24_29(1200000);
 }
 
 function menuitem28OnClick(Sender){
@@ -618,18 +592,8 @@ function menuitem28OnClick(Sender){
   menuitem26.checked = false;
   menuitem27.checked = false;
   menuitem28.checked = true;
-  Setvalue("accweathercore1.interval","1800000");
-  SaveValue();
   menuitem29.checked = false;
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni; 
-  accweathercore1.interval = 1800000;
-  accweathercore_interval = accweathercore1.Interval; 
+  setValue_menuitem_24_29(1800000);
 }
 
 function menuitem29OnClick(Sender){
@@ -639,15 +603,5 @@ function menuitem29OnClick(Sender){
   menuitem27.checked = false;
   menuitem28.checked = false;
   menuitem29.checked = true;
-  Setvalue("accweathercore1.interval","3600000");
-  SaveValue();
-  setValue('menuitem24.checked',menuitem24.checked);
-  setValue('menuitem25.checked',menuitem25.checked);
-  setValue('menuitem26.checked',menuitem26.checked);
-  setValue('menuitem27.checked',menuitem27.checked);
-  setValue('menuitem28.checked',menuitem28.checked);
-  setValue('menuitem29.checked',menuitem29.checked);
-  saveIni; 
-  accweathercore1.interval = 3600000;
-  accweathercore_interval = accweathercore1.Interval; 
+  setValue_menuitem_24_29(3600000); 
 }
