@@ -5,7 +5,7 @@ var WeatherIcon_DblClick = "0";
 var UpdateWeather_day;
 var UpdateWeather_hour;
 var UpdateWeather_minute;
-var accweathercore_interval = accweathercore1.Interval;
+var accweathercore_interval;
 
 
 function Forced_always_below(){
@@ -414,6 +414,7 @@ function widgetOnLoad(){
       SaveValue();
       accweathercore1.interval = 3600000;
     }
+    accweathercore_interval = accweathercore1.Interval;
     Forced_always_below()
   } catch(er){widget_reload()}
   widget_OnLoad = 0;
@@ -547,7 +548,8 @@ function menuitem24OnClick(Sender){
   setValue('menuitem28.checked',menuitem28.checked);
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni;
-  accweathercore1.interval = 300000; 
+  accweathercore1.interval = 300000;
+  accweathercore_interval = accweathercore1.Interval; 
 }
 
 function menuitem25OnClick(Sender){
@@ -567,6 +569,7 @@ function menuitem25OnClick(Sender){
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni;
   accweathercore1.interval = 600000;
+  accweathercore_interval = accweathercore1.Interval;
 }
 
 function menuitem26OnClick(Sender){
@@ -586,6 +589,7 @@ function menuitem26OnClick(Sender){
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni;  
   accweathercore1.interval = 900000;
+  accweathercore_interval = accweathercore1.Interval;
 }
 
 function menuitem27OnClick(Sender){
@@ -605,6 +609,7 @@ function menuitem27OnClick(Sender){
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni;  
   accweathercore1.interval = 1200000;
+  accweathercore_interval = accweathercore1.Interval;
 }
 
 function menuitem28OnClick(Sender){
@@ -623,7 +628,8 @@ function menuitem28OnClick(Sender){
   setValue('menuitem28.checked',menuitem28.checked);
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni; 
-  accweathercore1.interval = 1800000; 
+  accweathercore1.interval = 1800000;
+  accweathercore_interval = accweathercore1.Interval; 
 }
 
 function menuitem29OnClick(Sender){
@@ -642,5 +648,6 @@ function menuitem29OnClick(Sender){
   setValue('menuitem28.checked',menuitem28.checked);
   setValue('menuitem29.checked',menuitem29.checked);
   saveIni; 
-  accweathercore1.interval = 3600000; 
+  accweathercore1.interval = 3600000;
+  accweathercore_interval = accweathercore1.Interval; 
 }
