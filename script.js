@@ -21,8 +21,31 @@ function widget_reload(){
   Forced_always_below();
 }
 
+function WeatherIcon_src(){
+  curWeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%curWeatherIconNum")+".png";
+  if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")){
+        Day2_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum2")+".png";
+        Day3_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum3")+".png";
+        Day4_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum4")+".png";
+        Day5_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum5")+".png";
+        Day6_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum6")+".png";
+        Day7_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum7")+".png";
+        Day8_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum8")+".png";
+  }
+  if (datetimecore1.get("%Day")!=accweathercore1.get("%dayNumb1")) {
+        Day2_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum3")+".png";
+        Day3_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum4")+".png";
+        Day4_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum5")+".png";
+        Day5_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum6")+".png";
+        Day6_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum7")+".png";
+        Day7_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum8")+".png";
+        Day8_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum9")+".png";
+  }
+}
+
 function displacementDay() {
   try{
+    curWeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%curWeatherIconNum")+".png";
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1") && displacement_Day==1) {
         displacement_Day = 0;
         Day1_lowTemp.coreFormat = "${lowTemp1}°";
@@ -140,7 +163,8 @@ function checkDateTime(){
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
-    var core_Minute = Math.round(cur_Date.getTime()/60000);
+    //var core_Minute = Math.round(cur_Date.getTime()/60000);
+    var core_Minute = cur_Date.getTime()/60000;
     if(core_Minute>UpdateWeather_minute_interval){
       var Minute_Up1 = curWeatherUpgrTime.text;
       accweathercore1.cmd(null,"!UpdateWeather");
@@ -171,7 +195,8 @@ function accweathercore1OnUpdate(Sender){
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
-    UpdateWeather_minute = Math.round(cur_Date.getTime()/60000);
+    //UpdateWeather_minute = Math.round(cur_Date.getTime()/60000);
+    UpdateWeather_minute = cur_Date.getTime()/60000;
     if(menuitem21.checked){
       for(var i = 0; i < 3; i++){
         indicator.Visible = true;
@@ -225,28 +250,6 @@ function menuitem7OnClick(Sender){
   setValue('layer3.visible',layer3.Visible);
   saveIni;
   menuitem7_checked();
-}
-
-function WeatherIcon_src(){
-  curWeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%curWeatherIconNum")+".png"; 
-  if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")){
-        Day2_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum2")+".png";
-        Day3_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum3")+".png";
-        Day4_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum4")+".png";
-        Day5_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum5")+".png";
-        Day6_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum6")+".png";
-        Day7_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum7")+".png";
-        Day8_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum8")+".png";
-  }
-  if (datetimecore1.get("%Day")!=accweathercore1.get("%dayNumb1")) {
-        Day2_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum3")+".png";
-        Day3_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum4")+".png";
-        Day4_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum5")+".png";
-        Day5_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum6")+".png";
-        Day6_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum7")+".png";
-        Day7_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum8")+".png";
-        Day8_WeatherIcon.Src = "wth\\wth"+wth_icon+"\\"+accweathercore1.get("%WeatherIconNum9")+".png";
-  }
 }
 
 function WeatherIcon_click_ch(ch){
@@ -337,6 +340,8 @@ function WeatherIcon_DblClick_ch(){
 
 function widgetOnLoad(){
   try{
+    //Setvalue("accweathercore1.interval","600000");
+    //SaveValue();
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
       displacement_Day = 1;
     }else{
@@ -405,7 +410,7 @@ if(menuitem11.checked==false){
     menuitem12.checked = false;
     menuitem13.checked = false;
   } 
-  WeatherIcon_src();   
+  WeatherIcon_src();  
 }
 
 function menuitem12OnClick(Sender){
