@@ -196,12 +196,15 @@ function accweathercore1OnUpdate(Sender){
     UpdateWeather_hour = cur_Date.getHours();
     UpdateWeather_minute = cur_Date.getTime()/60000;
     if(menuitem21.checked){
-      for(var i = 0; i < 3; i++){
-        indicator.Visible = true;
-        sleep(400);
+      indicator.Visible = true;
+      sleep(400);
+      for(var i = 0; i < 2; i++){
         indicator.Visible = false;
         sleep(400);
-      }     
+        indicator.Visible = true;
+        sleep(400);
+      } 
+      indicator.Visible = false;
     }
   } catch(er){widget_reload();}
 }
