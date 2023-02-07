@@ -585,16 +585,18 @@ function Update_Weather(Sender){
 }
 
 function serverUpgrTimeOnChange(Sender){
-  var str = serverUpgrTime.text;
-  var i = str.indexOf(':');
-  if(i==1){
-    str = "0" + str;
-  }
-  i = str.indexOf(':');
-  if(i==2){
-    if(str.length<5){
-      str = str.replace(":", ":0");
-    }   
-  }
-  serverUpgrTime.text = str;  
+  if(serverUpgrTime.text.length<5){
+    var str = serverUpgrTime.text;
+    var i = str.indexOf(':');
+    if(i==1){
+      str = "0" + str;
+    }
+    i = str.indexOf(':');
+    if(i==2){
+      if(str.length<5){
+        str = str.replace(":", ":0");
+      }   
+    }
+    serverUpgrTime.text = str;
+  }  
 }
