@@ -167,13 +167,6 @@ function timercore1OnUpdate(Sender){
   timercore1.Enabled = 0;
 }
 
-function WUT(){
-  sleep(3000);
-  if(WeatherUpgrTime==curWeatherUpgrTime.text){
-    widget_reload();
-  } 
-}
-
 function checkDateTime(){
   try {
     var UpdateWeather_minute_interval = UpdateWeather_minute + ((accweathercore_interval-5000)/60000); 
@@ -186,7 +179,6 @@ function checkDateTime(){
       accweathercore1.Enabled = -1;
       accweathercore1.cmd(null,"!UpdateWeather");
       timercore1.Enabled = -1;
-      //setTimeout(WUT(),0);
       accweathercore1.Enabled = 0;
       return(0);
     }
@@ -590,4 +582,8 @@ function menuitem29OnClick(Sender){
 function Update_Weather(Sender){
   accweathercore1.Enabled = -1;
   accweathercore1.cmd(null,"!UpdateWeather");  
+}
+
+function serverUpgrTimeOnChange(Sender){
+  
 }
