@@ -148,6 +148,7 @@
 	<cores>
 		<dateTimeCore name="datetimecore1" timeZoneName=" Baghdad"/>
 		<accWeatherCore name="accweathercore1" onUpdate="accweathercore1OnUpdate"/>
+		<timerCore name="timercore1" enabled="false" interval="3000" onUpdate="timercore1OnUpdate"/>
 	</cores>
 	<hotspots/>
 </xul>

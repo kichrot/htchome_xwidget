@@ -160,6 +160,13 @@ function layer1OnChange(Sender){
   numbimage1.values = Sender.value;
 }
 
+function timercore1OnUpdate(Sender){
+  if(WeatherUpgrTime==curWeatherUpgrTime.text || curWeatherUpgrTime.text==""){
+    widget_reload();
+  }
+  timercore1.Enabled = 0;
+}
+
 function WUT(){
   sleep(3000);
   if(WeatherUpgrTime==curWeatherUpgrTime.text){
@@ -169,7 +176,7 @@ function WUT(){
 
 function checkDateTime(){
   try {
-    var UpdateWeather_minute_interval = UpdateWeather_minute + ((accweathercore_interval-1000)/60000); 
+    var UpdateWeather_minute_interval = UpdateWeather_minute + ((accweathercore_interval-5000)/60000); 
     var cur_Date = new Date();
     var core_Day =  cur_Date.getDate();
     var core_Hour = cur_Date.getHours();
@@ -178,7 +185,8 @@ function checkDateTime(){
     if(core_Minute>UpdateWeather_minute_interval){
       accweathercore1.Enabled = -1;
       accweathercore1.cmd(null,"!UpdateWeather");
-      setTimeout(WUT(),0);
+      timercore1.Enabled = -1;
+      //setTimeout(WUT(),0);
       accweathercore1.Enabled = 0;
       return(0);
     }
@@ -355,6 +363,8 @@ function WeatherIcon_DblClick_ch(){
 
 function widgetOnLoad(){
   try{
+    timercore1.Interval = 3000;
+    timercore1.Enabled = 0;
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
       displacement_Day = 1;
     }else{
