@@ -111,7 +111,7 @@
 	</window>
 	<menu>
 		<item name="menuitem14" caption="Настройки виджета">
-			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="!ChangeLocation"/>
+			<item name="menuitem1" caption="Изменение местоположения" core="accweathercore1" onClick="menuitem1OnClick"/>
 			<item name="menuitem23" caption="Интервал обновления данных о погоде">
 				<item name="menuitem24" caption="5 минут" onClick="menuitem24OnClick"/>
 				<item name="menuitem25" caption="10 минут" onClick="menuitem25OnClick"/>

@@ -599,3 +599,8 @@ function serverUpgrTimeOnChange(Sender){
     serverUpgrTime.text = str;
   }  
 }
+
+function menuitem1OnClick(Sender){
+  accweathercore1.Enabled = -1;
+  accweathercore1.cmd(null,"!ChangeLocation");  
+}
