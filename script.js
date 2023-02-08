@@ -512,8 +512,10 @@ function Update_Weather(){
 }
 
 function cityNameOnChange(Sender){
-  if(widget_OnLoad==0){
+  if(widget_OnLoad==0 && cityName.Text!=accweathercore1.cityName){
     Update_Weather();
+    var str = "Для завершения процесса смены населенного пункта следует перезагрузить виджет. После перезагрузки виджета обязательно закройте окно настройки местоположения. Перезагрузить виджет?";
+    if(confirm(str)){widget_reload();}
   }  
 } 
 
