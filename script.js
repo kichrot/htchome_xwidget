@@ -506,10 +506,14 @@ function menuitem19OnClick(Sender){
   WeatherIcon_DblClick_ch();
 }
 
+function Update_Weather(){
+  accweathercore1.Enabled = -1;
+  accweathercore1.cmd(null,"!UpdateWeather");
+}
+
 function cityNameOnChange(Sender){
   if(widget_OnLoad==0){
-    sleep(3000);
-    widget_reload();
+    Update_Weather();
   }  
 } 
 
@@ -577,11 +581,6 @@ function menuitem28OnClick(Sender){
 
 function menuitem29OnClick(Sender){
   setValue_menuitem_24_29(false, false, false, false, false, true, 3600000); 
-}
-
-function Update_Weather(Sender){
-  accweathercore1.Enabled = -1;
-  accweathercore1.cmd(null,"!UpdateWeather");  
 }
 
 function serverUpgrTimeOnChange(Sender){
