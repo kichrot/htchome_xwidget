@@ -4,10 +4,10 @@
 		<name>HTCHome_XWidget</name>
 		<namespace/>
 		<displayName>HTCHome_XWidget</displayName>
-		<version>8.1.0</version>
+		<version>9.0.0</version>
 		<authorName>kichrot</authorName>
 		<description>Погодный виджет для XWidget, по мотивам HTC Home.
-Версия 8.1</description>
+Версия 9</description>
 		<permissions/>
 		<CloseBoxInsetX>4</CloseBoxInsetX>
 		<CloseBoxInsetY>28</CloseBoxInsetY>
