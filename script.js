@@ -354,7 +354,7 @@ function WeatherIcon_DblClick_ch(){
 }
 
 function widgetOnLoad(){
-  try{
+  try{    
     timercore1.Interval = 3000;
     timercore1.Enabled = 0;
     if (datetimecore1.get("%Day")==accweathercore1.get("%dayNumb1")) {
@@ -514,7 +514,7 @@ function Update_Weather(){
 function cityNameOnChange(Sender){
   if(widget_OnLoad==0 && cityName.Text!=accweathercore1.cityName){
     Update_Weather();
-    var str = "Для завершения процесса смены населенного пункта следует перезагрузить виджет. После перезагрузки виджета обязательно закройте окно настройки местоположения. Перезагрузить виджет?";
+    var str = "Для завершения процесса смены населенного пункта следует перезагрузить виджет.\r\nПосле перезагрузки виджета обязательно закройте окно настройки местоположения.\r\n\r\nПерезагрузить виджет?";
     if(confirm(str)){widget_reload();}
   }  
 } 

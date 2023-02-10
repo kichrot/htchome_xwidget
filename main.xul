@@ -74,31 +74,21 @@
 		</side>
 		<side name="back">
 			<image name="backgroundImage_2" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
-				<layer name="layer5" left="24" top="8" width="271" height="205" onDblClick="!Flip" locked="true">
-					<text name="curWeather1" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Ощущение температуры: ${curRealFeel}°                 
-
-Давление: ${curPressureWithUnit}             
-
-Скорость ветра: ${curWindSpeed}  км/ч             
-
-Восход Солнца: ${sunRise}      
-
-Восход Луны: ${moonRise}      
-
-Ультрафиолетовый индекс: ${curUVIndex} (${curUVText}) 
-                  
-Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: ${updateTime} " font.antiAlias="true" onDblClick="!Flip" locked="true"/>
+				<text name="text11" width="554" height="25" font.family="Tahoma" font.size="18" font.fill.color="255,255,255,255" wordWrap="True" coreFormat="             " font.antiAlias="true" onDblClick="!Flip" locked="true" left="24" top="8" text="Дополнительные сведения по текущему состоянию погоды:" hAlign="1" vAlign="0" font.style=""/>
+				<layer name="layer5" left="24" top="41" width="271" height="174" onDblClick="!Flip" locked="true">
+					<text name="text5" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Ультрафиолетовый индекс: ${curUVIndex} (${curUVText})                  " font.antiAlias="true" onDblClick="!Flip" locked="true" top="145"/>
+					<text name="text4" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="116" coreFormat="Восход Луны: ${moonRise}"/>
+					<text name="text3" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Восход Солнца: ${sunRise}            " font.antiAlias="true" onDblClick="!Flip" locked="true" top="87"/>
+					<text name="text2" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Скорость ветра: ${curWindSpeed}  км/ч         " font.antiAlias="true" onDblClick="!Flip" locked="true" top="58"/>
+					<text name="text1" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Давление: ${curPressureWithUnit}               " font.antiAlias="true" onDblClick="!Flip" locked="true" top="29"/>
+					<text name="curWeather1" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Ощущение температуры: ${curRealFeel}°                 " font.antiAlias="true" onDblClick="!Flip" locked="true"/>
 				</layer>
-				<layer name="layer6" left="313" top="8" width="271" height="205" onDblClick="!Flip" locked="true">
-					<text name="curWeather2" width="271" height="211" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%
-
-Видимость: ${curVisibility} км
-
-Направление ветра: ${curWindDirection}
-
-Закат Солнца: ${sunSet}
-
-Закат Луны: ${moonSet} " font.antiAlias="true" onDblClick="!Flip" locked="true"/>
+				<layer name="layer6" left="313" top="41" width="271" height="174" onDblClick="!Flip" locked="true">
+					<text name="text10" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="116" coreFormat="Закат Луны: ${moonSet}"/>
+					<text name="text9" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="87" coreFormat="Закат Солнца: ${sunSet}"/>
+					<text name="text8" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="58" coreFormat="Направление ветра: ${curWindDirection}"/>
+					<text name="text7" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="29" coreFormat="Видимость: ${curVisibility} км"/>
+					<text name="text6" width="271" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="Влажность: ${curHumidity}%" font.antiAlias="true" onDblClick="!Flip" locked="true"/>
 				</layer>
 				<layer name="layer7" width="560" height="31" left="24" top="223" locked="true">
 					<text name="serverUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" font.size="14" left="509" locked="true" core="accweathercore1" hAlign="2" coreFormat="${updateTime}" onChange="serverUpgrTimeOnChange"/>
