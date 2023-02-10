@@ -74,8 +74,8 @@
 		</side>
 		<side name="back">
 			<image name="backgroundImage_2" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
-				<text name="Add_inf" width="554" height="25" font.family="Tahoma" font.size="18" font.fill.color="255,255,255,255" wordWrap="True" coreFormat="             " font.antiAlias="true" onDblClick="!Flip" locked="true" left="24" top="8" text="Дополнительные сведения по текущему состоянию погоды:" vAlign="0"/>
-				<layer name="layer5" left="24" top="41" width="271" height="174" onDblClick="!Flip" locked="true">
+				<text name="Add_inf" width="554" height="25" font.family="Tahoma" font.size="18" font.fill.color="255,255,255,255" wordWrap="True" coreFormat="             " font.antiAlias="true" onDblClick="!Flip" locked="true" left="15" top="8" text="Дополнительные сведения по текущему состоянию погоды:" vAlign="0"/>
+				<layer name="layer5" left="15" top="41" width="271" height="174" onDblClick="!Flip" locked="true">
 					<text name="curWeather6_2" width="183" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="${curUVIndex} (${curUVText})" font.antiAlias="true" onDblClick="!Flip" locked="true" top="145" left="88" hAlign="2"/>
 					<text name="curWeather5_2" width="150" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" font.antiAlias="true" onDblClick="!Flip" locked="true" top="116" coreFormat="${moonRise}" left="121" hAlign="2"/>
 					<text name="curWeather4_2" width="150" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="${sunRise}" font.antiAlias="true" onDblClick="!Flip" locked="true" top="87" left="121" hAlign="2"/>
@@ -101,7 +101,7 @@
 					<text name="curWeather8" width="89" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" onDblClick="!Flip" locked="true" top="29" text="Видимость:"/>
 					<text name="curWeather7" width="89" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" onDblClick="!Flip" locked="true" text="Влажность:"/>
 				</layer>
-				<layer name="layer7" width="560" height="31" left="24" top="223" locked="true">
+				<layer name="layer7" width="560" height="31" left="15" top="223" locked="true">
 					<text name="serverUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" font.size="14" left="509" locked="true" core="accweathercore1" hAlign="2" coreFormat="${updateTime}" onChange="serverUpgrTimeOnChange"/>
 					<text name="curWeatherUpgrTime" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" top="15" vAlign="0" onDblClick="!Flip" core="datetimecore1" font.size="14" left="509" locked="true" hAlign="2"/>
 					<text name="serverUpgr" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" locked="true" font.size="14" text="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: "/>
