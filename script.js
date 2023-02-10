@@ -1,5 +1,5 @@
 var widget_OnLoad = 1;
-var displacement_Day = 0;
+var displacement_Day = 0;               
 var wth_icon = "1";
 var WeatherIcon_DblClick = "0";
 var UpdateWeather_day;
@@ -217,6 +217,14 @@ function accweathercore1OnUpdate(Sender){
     UpdateWeather_day = cur_Date.getDate();
     UpdateWeather_hour = cur_Date.getHours();
     UpdateWeather_minute = cur_Date.getTime()/60000;
+    var m_s = accweathercore1.get("%curWindSpeed") / 3.6;
+    m_s = m_s.toFixed(1);
+    curWeather3_2.Text =  accweathercore1.get("%curWindSpeed") + " ךל/ק" + " (" + m_s + " ל/ס)";
+    
+    var m_s = accweathercore1.get("%curPressure") / 1.333;
+    m_s = Math.round(m_s);
+    curWeather2_2.Text = accweathercore1.get("%curPressure") + " mb" + " (" + m_s + " לל נע סע)";
+    
     if(menuitem21.checked){
       setTimeout(indicator_OnUpdate(),0);
     }
