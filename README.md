@@ -8,7 +8,7 @@
 
 ![Скриншот2:](https://raw.githubusercontent.com/kichrot/htchome_xwidget/main/IMG/2.png)
 
-![Скриншот3:](https://raw.githubusercontent.com/kichrot/htchome_xwidget/main/IMG/3.png)
+![Скриншот3:](https://raw.githubusercontent.com/kichrot/htchome_xwidget/main/IMG/4.png)
 
 Установка:
 
