@@ -429,7 +429,13 @@ function widgetOnLoad(){
     if(menuitem29.checked){
       accweathercore_interval = 3600000;
     }
-    Forced_always_below()
+    menuitem30.checked = GetValue("menuitem30.checked",false);
+    if(menuitem30.checked){
+      sec.Visible = true;
+    }else{
+      sec.Visible = false;
+    }
+    Forced_always_below();
   } catch(er){widget_reload()}
   widget_OnLoad = 0;
 }
@@ -613,4 +619,16 @@ function serverUpgrTimeOnChange(Sender){
 function menuitem1OnClick(Sender){
   accweathercore1.Enabled = -1;
   accweathercore1.cmd(null,"!ChangeLocation");  
+}
+
+function menuitem30OnClick(Sender){
+  if(menuitem30.checked==false){
+    menuitem30.checked = true;
+    sec.Visible = true; 
+  }else{
+    menuitem30.checked = false;
+    sec.Visible = false;
+  }
+  setValue('menuitem30.checked',menuitem30.checked);
+  saveIni; 
 }

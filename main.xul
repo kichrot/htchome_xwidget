@@ -62,6 +62,7 @@
 				</layer>
 				<layer name="layer2" width="128" height="132" top="4" left="130" enabledAnimateChange="true" animateChange.duration=".9" animateChange.switchEffect="27" animateChange.dynamicEffect="10" coreFormat="%Minute0" onChange="layer2OnChange" onDblClick="!Flip" locked="true" mouseThrough="true" core="datetimecore1">
 					<image name="image3" width="128" height="132" src="FlipAnim\Background\flip_bg.png" wrapMode="2" locked="true" mouseThrough="true">
+						<text name="sec" width="22" height="16" autoSize="false" left="98" top="106" locked="true" core="datetimecore1" coreFormat="${Second0}" font.family="Tahoma" hAlign="1" vAlign="0" font.size="14" font.style=""/>
 						<numbImage name="numbimage2" width="96" height="83" src="FlipAnim\Digits\all.png" left="17" top="24" frameCount="10" animateChange.switchEffect="18" animateChange.dynamicEffect="0" animateChange.occasion="2" animateChange.duration=".3" values="00" digits="2" mouseThrough="true" locked="true"/>
 					</image>
 				</layer>
@@ -131,6 +132,7 @@
 			<item name="menuitem7" onClick="menuitem7OnClick" caption="Показать прогноз погоды"/>
 			<item name="menuitem21" caption="Индикатор обновления погоды" onClick="menuitem21OnClick"/>
 			<item name="menuitem19" caption="Двойной клик на погодных иконках - открыть сайт" onClick="menuitem19OnClick"/>
+			<item name="menuitem30" caption="Показывать секунды" onClick="menuitem30OnClick"/>
 			<item name="menuitem20" caption="Принудительно ниже всех окон" onClick="menuitem20OnClick"/>
 			<item name="menuitem3" caption="-"/>
 			<item name="menuitem4" onClick="menuitem4OnClick" caption="Градусы по Цельсию" core="accweathercore1"/>
