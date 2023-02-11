@@ -525,9 +525,12 @@ function Update_Weather(){
 
 function cityNameOnChange(Sender){
   if(widget_OnLoad==0 && cityName.Text!=accweathercore1.cityName){
+    var wsc = new ActiveXObject("WScript.Shell");
+    wsc.SendKeys("{ESC}");
+    sleep(500);
     Update_Weather();
-    var str = "Для завершения процесса смены населенного пункта следует перезагрузить виджет.\r\nПосле перезагрузки виджета обязательно закройте окно настройки местоположения.\r\n\r\nПерезагрузить виджет?";
-    if(confirm(str)){widget_reload();}
+    sleep(500);
+    widget_reload();
   }  
 } 
 
