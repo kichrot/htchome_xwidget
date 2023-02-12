@@ -615,6 +615,9 @@ function serverUpgrTimeOnChange(Sender){
     }
     serverUpgrTime.text = str;
   }  
+  if(Sender.Text==""){
+    Sender.Text = "нет данных";
+  }
 }
 
 function menuitem1OnClick(Sender){
@@ -632,4 +635,10 @@ function menuitem30OnClick(Sender){
   }
   setValue('menuitem30.checked',menuitem30.checked);
   saveIni; 
+}
+
+function curWeatherOnChange(Sender){
+  if(Sender.Text==""){
+    Sender.Text = "нет данных";
+  }
 }
