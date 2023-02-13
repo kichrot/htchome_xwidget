@@ -3,7 +3,7 @@
 	<script type="text/javascript" src="script.js"/>
 	<window type="widget" width="596" height="261" onLoad="widgetOnLoad" onLeave="Forced_always_below" onEnter="widgetOnEnter" onPopupMenu="Forced_always_below" onResize="Forced_always_below" onMove="Forced_always_below" onFlipToBack="Forced_always_below" onFlipToFront="Forced_always_below" onWidgetDeactivate="Forced_always_below">
 		<side name="front">
-			<image name="backgroundImage" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
+			<layer name="layer15" width="596" height="261" onDblClick="!Flip" locked="true">
 				<image name="indicator" left="567" top="9" width="20" height="20" src="Images\Badge2.png" wrapMode="1" opacity=".4" locked="true" hAlign="1" vAlign="1" visible="false"/>
 				<text name="cityName" width="331" height="22" font.family="Tahoma" font.size="18" left="257" top="135" font.fill.color="255,255,255,255" core="accweathercore1" coreFormat="${cityName}" cursor="-21" font.style="Bold" flatStyle.enabled="true" flatStyle.color="0,0,0,255" flatStyle.offsetX="-1" locked="true" mouseThrough="true" onChange="cityNameOnChange"/>
 				<text name="curWeatherText" left="257" top="101" width="331" height="34" font.fill.color="255,255,255,255" font.size="16" font.family="Tahoma" mouseThrough="True" core="accweathercore1" wordWrap="True" upperCaseFirstWord="True" text="Sunny" coreFormat="${curWeatherText}" font.style="Bold" effect.bevel.size="6" effect.bevel.direction="88" effect.innerShadow.opacity=".42" effect.shadow.direction="146" effect.shadow.distance="-29" flatStyle.enabled="true" flatStyle.offsetX="-1" flatStyle.color="0,0,0,255" effect.shadow.opacity="0" effect.glow.opacity=".85" effect.glow.softness="1.14" effect.glow.color="0,0,0,255" locked="true"/>
@@ -71,10 +71,11 @@
 						<numbImage name="numbimage1" width="96" height="83" src="FlipAnim\Digits\all.png" left="17" top="24" frameCount="10" mouseThrough="True" animateChange.switchEffect="18" animateChange.dynamicEffect="0" animateChange.occasion="2" animateChange.duration=".3" values="00" digits="2" locked="true"/>
 					</image>
 				</layer>
-			</image>
+				<image name="backgroundImage" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true"/>
+			</layer>
 		</side>
 		<side name="back">
-			<image name="backgroundImage_2" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true">
+			<layer name="layer16" width="596" height="261" onDblClick="!Flip" locked="true">
 				<text name="Add_inf" width="554" height="25" font.family="Tahoma" font.size="18" font.fill.color="255,255,255,255" wordWrap="True" coreFormat="             " font.antiAlias="true" onDblClick="!Flip" locked="true" left="15" top="8" text="Дополнительные сведения по текущему состоянию погоды:" vAlign="0"/>
 				<layer name="layer5" left="15" top="41" width="288" height="174" onDblClick="!Flip" locked="true">
 					<text name="curWeather6_2" width="200" height="29" font.family="Tahoma" font.size="15" font.fill.color="255,255,255,255" wordWrap="True" core="accweathercore1" coreFormat="${curUVIndex} (${curUVText})" font.antiAlias="true" onDblClick="!Flip" locked="true" top="145" left="88" hAlign="2" onChange="curWeatherOnChange" text="нет данных"/>
@@ -108,7 +109,8 @@
 					<text name="serverUpgr" width="461" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" vAlign="0" onDblClick="!Flip" locked="true" font.size="14" text="Последнее обновление данных на сервере &quot;www.accuweather.com&quot;: "/>
 					<text name="curWeatherUpgrText" width="512" height="14" font.family="Tahoma" font.fill.color="255,255,255,255" wordWrap="True" font.antiAlias="true" top="15" vAlign="0" onDblClick="!Flip" locked="true" text="Последнее обновление данных виджета с сервера &quot;www.accuweather.com&quot;:" font.size="14"/>
 				</layer>
-			</image>
+				<image name="backgroundImage_2" width="596" height="261" src="base.png" onDblClick="!Flip" effect.glow.opacity="0" autoSize="true" locked="true"/>
+			</layer>
 		</side>
 	</window>
 	<menu>
@@ -123,6 +125,19 @@
 				<item name="menuitem29" caption="1 час" onClick="menuitem29OnClick"/>
 			</item>
 			<item name="menuitem22" caption="-"/>
+			<item name="menuitem31" caption="Прозрачность фона виджета">
+				<item name="menuitem32" caption="непрозрачный" onClick="menuitem32OnClick"/>
+				<item name="menuitem33" caption="10%" onClick="menuitem33OnClick"/>
+				<item name="menuitem34" caption="20%" onClick="menuitem34OnClick"/>
+				<item name="menuitem35" caption="30%" onClick="menuitem35OnClick"/>
+				<item name="menuitem36" caption="40%" onClick="menuitem36OnClick"/>
+				<item name="menuitem37" caption="50%" onClick="menuitem37OnClick"/>
+				<item name="menuitem38" caption="60%" onClick="menuitem38OnClick"/>
+				<item name="menuitem39" caption="70%" onClick="menuitem39OnClick"/>
+				<item name="menuitem40" caption="80%" onClick="menuitem40OnClick"/>
+				<item name="menuitem41" caption="90%" onClick="menuitem41OnClick"/>
+				<item name="menuitem42" caption="99%" onClick="menuitem42OnClick"/>
+			</item>
 			<item name="menuitem9" caption="Набор иконок погоды">
 				<item name="menuitem10" caption="Набор 1" onClick="menuitem10OnClick"/>
 				<item name="menuitem11" caption="Набор 2" onClick="menuitem11OnClick"/>
