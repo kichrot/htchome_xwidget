@@ -359,9 +359,24 @@ function WeatherIcon_DblClick_ch(){
   }
 }
 
-function backgroundImage_opacity(opacity){
+function backgroundImage_opacity(opacity, ch32, ch33, ch34, ch35, ch36, ch37, ch38, ch39, ch40, ch41, ch42){
+  menuitem32.checked = ch32;
+  menuitem33.checked = ch33;
+  menuitem34.checked = ch34;
+  menuitem35.checked = ch35;
+  menuitem36.checked = ch36;
+  menuitem37.checked = ch37;
+  menuitem38.checked = ch38;
+  menuitem39.checked = ch39;
+  menuitem40.checked = ch40;
+  menuitem41.checked = ch41;
+  menuitem42.checked = ch42;
   backgroundImage.Opacity = opacity;
   backgroundImage_2.Opacity = opacity;
+  if(widget_OnLoad==0){
+    setValue('backgroundImage.Opacity',opacity);
+    saveIni;  
+  }
 }
 
 function widgetOnLoad(){
@@ -437,50 +452,40 @@ function widgetOnLoad(){
       sec.Visible = true;
     }else{
       sec.Visible = false;
+    }  
+    var op = GetValue("backgroundImage.Opacity",1);
+    if(op==1){
+      backgroundImage_opacity(1, true, false, false, false, false, false, false, false, false, false, false);
     }
-    menuitem32.checked = getValue('menuitem32.checked', true);
-    menuitem33.checked = getValue('menuitem33.checked', false);
-    menuitem34.checked = getValue('menuitem34.checked', false);
-    menuitem35.checked = getValue('menuitem35.checked', false);
-    menuitem36.checked = getValue('menuitem36.checked', false);
-    menuitem37.checked = getValue('menuitem37.checked', false);
-    menuitem38.checked = getValue('menuitem38.checked', false);
-    menuitem39.checked = getValue('menuitem39.checked', false);
-    menuitem40.checked = getValue('menuitem40.checked', false);
-    menuitem41.checked = getValue('menuitem41.checked', false);
-    menuitem42.checked = getValue('menuitem42.checked', false);
-    if(menuitem32.checked){
-      backgroundImage_opacity(1);
+    if(op==0.9){
+      backgroundImage_opacity(0.9, false, true, false, false, false, false, false, false, false, false, false);
     }
-    if(menuitem33.checked){
-      backgroundImage_opacity(0.9);
+    if(op==0.8){
+      backgroundImage_opacity(0.8, false, false, true, false, false, false, false, false, false, false, false);
     }
-    if(menuitem34.checked){
-      backgroundImage_opacity(0.8);
+    if(op==0.7){
+      backgroundImage_opacity(0.7, false, false, false, true, false, false, false, false, false, false, false);
     }
-    if(menuitem35.checked){
-      backgroundImage_opacity(0.7);
+    if(op==0.6){
+      backgroundImage_opacity(0.6, false, false, false, false, true, false, false, false, false, false, false);
     }
-    if(menuitem36.checked){
-      backgroundImage_opacity(0.6);
+    if(op==0.5){
+      backgroundImage_opacity(0.5, false, false, false, false, false, true, false, false, false, false, false);
     }
-    if(menuitem37.checked){
-      backgroundImage_opacity(0.5);
+    if(op==0.4){
+      backgroundImage_opacity(0.4, false, false, false, false, false, false, true, false, false, false, false);
     }
-    if(menuitem38.checked){
-      backgroundImage_opacity(0.4);
+    if(op==0.3){
+      backgroundImage_opacity(0.3, false, false, false, false, false, false, false, true, false, false, false);
     }
-    if(menuitem39.checked){
-      backgroundImage_opacity(0.3);
+    if(op==0.2){
+      backgroundImage_opacity(0.2, false, false, false, false, false, false, false, false, true, false, false);
     }
-    if(menuitem40.checked){
-      backgroundImage_opacity(0.2);
+    if(op==0.1){
+       backgroundImage_opacity(0.1, false, false, false, false, false, false, false, false, false, true, false);
     }
-    if(menuitem41.checked){
-      backgroundImage_opacity(0.1);
-    }
-    if(menuitem42.checked){
-      backgroundImage_opacity(0.01);
+    if(op==0.01){
+      backgroundImage_opacity(0.01, false, false, false, false, false, false, false, false, false, false, true);
     }
     Forced_always_below();
   } catch(er){widget_reload()}
@@ -692,83 +697,46 @@ function curWeatherOnChange(Sender){
   }
 }
 
-function setValue_menuitem_32_42(ch32, ch33, ch34, ch35, ch36, ch37, ch38, ch39, ch40, ch41, ch42){
-  menuitem32.checked = ch32;
-  menuitem33.checked = ch33;
-  menuitem34.checked = ch34;
-  menuitem35.checked = ch35;
-  menuitem36.checked = ch36;
-  menuitem37.checked = ch37;
-  menuitem38.checked = ch38;
-  menuitem39.checked = ch39;
-  menuitem40.checked = ch40;
-  menuitem41.checked = ch41;
-  menuitem42.checked = ch42;   
-  setValue('menuitem32.checked',menuitem32.checked);
-  setValue('menuitem33.checked',menuitem33.checked);
-  setValue('menuitem34.checked',menuitem34.checked);
-  setValue('menuitem35.checked',menuitem35.checked);
-  setValue('menuitem36.checked',menuitem36.checked);
-  setValue('menuitem37.checked',menuitem37.checked);
-  setValue('menuitem38.checked',menuitem38.checked);
-  setValue('menuitem39.checked',menuitem39.checked);
-  setValue('menuitem40.checked',menuitem40.checked);
-  setValue('menuitem41.checked',menuitem41.checked);
-  setValue('menuitem42.checked',menuitem42.checked);
-  saveIni;
-}
-
 function menuitem32OnClick(Sender){
-  backgroundImage_opacity(1);
-  setValue_menuitem_32_42(true, false, false, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(1, true, false, false, false, false, false, false, false, false, false, false);
 }
 
 function menuitem33OnClick(Sender){
-  backgroundImage_opacity(0.9);
-  setValue_menuitem_32_42(false, true, false, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.9, false, true, false, false, false, false, false, false, false, false, false);
 }
 
 function menuitem34OnClick(Sender){
-  backgroundImage_opacity(0.8);
-  setValue_menuitem_32_42(false, false, true, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.8, false, false, true, false, false, false, false, false, false, false, false);
 }
 
 function menuitem35OnClick(Sender){
-  backgroundImage_opacity(0.7);
-  setValue_menuitem_32_42(false, false, false, true, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.7, false, false, false, true, false, false, false, false, false, false, false);
 }
 
 function menuitem36OnClick(Sender){
-  backgroundImage_opacity(0.6);
-  setValue_menuitem_32_42(false, false, false, false, true, false, false, false, false, false, false);
+  backgroundImage_opacity(0.6, false, false, false, false, true, false, false, false, false, false, false);
 }
 
 function menuitem37OnClick(Sender){
-  backgroundImage_opacity(0.5);
-  setValue_menuitem_32_42(false, false, false, false, false, true, false, false, false, false, false);
+  backgroundImage_opacity(0.5, false, false, false, false, false, true, false, false, false, false, false);
 }
 
 function menuitem38OnClick(Sender){
-  backgroundImage_opacity(0.4);
-  setValue_menuitem_32_42(false, false, false, false, false, false, true, false, false, false, false);
+  backgroundImage_opacity(0.4, false, false, false, false, false, false, true, false, false, false, false);
 }
 
 function menuitem39OnClick(Sender){
-  backgroundImage_opacity(0.3);
-  setValue_menuitem_32_42(false, false, false, false, false, false, false, true, false, false, false);
+  backgroundImage_opacity(0.3, false, false, false, false, false, false, false, true, false, false, false);
 }
 
 function menuitem40OnClick(Sender){
-  backgroundImage_opacity(0.2);
-  setValue_menuitem_32_42(false, false, false, false, false, false, false, false, true, false, false);
+  backgroundImage_opacity(0.2, false, false, false, false, false, false, false, false, true, false, false);
 }
 
 function menuitem41OnClick(Sender){
-  backgroundImage_opacity(0.1);
-  setValue_menuitem_32_42(false, false, false, false, false, false, false, false, false, true, false);
+  backgroundImage_opacity(0.1, false, false, false, false, false, false, false, false, false, true, false);
 }
 
 function menuitem42OnClick(Sender){
-  backgroundImage_opacity(0.01);
-  setValue_menuitem_32_42(false, false, false, false, false, false, false, false, false, false, true);
+  backgroundImage_opacity(0.01, false, false, false, false, false, false, false, false, false, false, true);
 }
