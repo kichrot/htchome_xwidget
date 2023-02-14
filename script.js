@@ -435,7 +435,7 @@ function widgetOnLoad(){
     WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
     WeatherIcon_click_ch(WeatherIcon_DblClick);
     menuitem20.checked = GetValue("below_all_the_windows",true);
-    menuitem21.checked = GetValue("menuitem21.checked",true);
+    menuitem21.checked = GetValue("show_indicator",true);
     accweathercore_interval = getValue('accweathercore.interval', 900000);
     if(accweathercore_interval==300000){
       awcore_interval(300000, true, false, false, false, false, false);  
@@ -455,7 +455,7 @@ function widgetOnLoad(){
     if(accweathercore_interval==3600000){
       awcore_interval(3600000, false, false, false, false, false, true);
     }
-    menuitem30.checked = GetValue("menuitem30.checked",false);
+    menuitem30.checked = GetValue("show_sec",false);
     if(menuitem30.checked){
       sec.Visible = true;
     }else{
@@ -617,7 +617,7 @@ function menuitem21OnClick(Sender){
   }else{
     menuitem21.checked = false;
   }  
-  setValue('menuitem21.checked',menuitem21.checked);
+  setValue('show_indicator',menuitem21.checked);
   saveIni;
 }
 
@@ -684,7 +684,7 @@ function menuitem30OnClick(Sender){
     menuitem30.checked = false;
     sec.Visible = false;
   }
-  setValue('menuitem30.checked',menuitem30.checked);
+  setValue('show_sec',menuitem30.checked);
   saveIni; 
 }
 
