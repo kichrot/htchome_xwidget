@@ -359,7 +359,7 @@ function WeatherIcon_DblClick_ch(){
   }
 }
 
-function backgroundImage_opacity(opacity, ch32, ch33, ch34, ch35, ch36, ch37, ch38, ch39, ch40, ch41, ch42){
+function backgroundImage_opacity(opacity,ch32,ch33,ch34,ch35,ch36,ch37,ch38,ch39,ch40,ch41,ch42){
   menuitem32.checked = ch32;
   menuitem33.checked = ch33;
   menuitem34.checked = ch34;
@@ -379,7 +379,7 @@ function backgroundImage_opacity(opacity, ch32, ch33, ch34, ch35, ch36, ch37, ch
   }
 }
 
-function awcore_interval(interval, ch24, ch25, ch26, ch27, ch28, ch29){
+function awcore_interval(interval,ch24,ch25,ch26,ch27,ch28,ch29){
   menuitem24.checked = ch24;
   menuitem25.checked = ch25;
   menuitem26.checked = ch26;
@@ -438,22 +438,22 @@ function widgetOnLoad(){
     menuitem21.checked = GetValue("show_indicator",true);
     accweathercore_interval = getValue('accweathercore.interval', 900000);
     if(accweathercore_interval==300000){
-      awcore_interval(300000, true, false, false, false, false, false);  
+      awcore_interval(300000,-1,0,0,0,0,0);  
     }
     if(accweathercore_interval==600000){
-      awcore_interval(600000, false, true, false, false, false, false);
+      awcore_interval(600000,0,-1,0,0,0,0);
     }
     if(accweathercore_interval==900000){
-      awcore_interval(900000, false, false, true, false, false, false);
+      awcore_interval(900000,0,0,-1,0,0,0);
     }
     if(accweathercore_interval==1200000){
-      awcore_interval(1200000, false, false, false, true, false, false);
+      awcore_interval(1200000,0,0,0,-1,0,0);
     }
     if(accweathercore_interval==1800000){
-      awcore_interval(1800000, false, false, false, false, true, false);
+      awcore_interval(1800000,0,0,0,0,-1,0);
     }
     if(accweathercore_interval==3600000){
-      awcore_interval(3600000, false, false, false, false, false, true);
+      awcore_interval(3600000,0,0,0,0,0,-1);
     }
     menuitem30.checked = GetValue("show_sec",false);
     if(menuitem30.checked){
@@ -463,37 +463,37 @@ function widgetOnLoad(){
     }  
     var op = GetValue("backgroundImage.Opacity",1);
     if(op==1){
-      backgroundImage_opacity(1, true, false, false, false, false, false, false, false, false, false, false);
+      backgroundImage_opacity(1,-1,0,0,0,0,0,0,0,0,0,0);
     }
     if(op==0.9){
-      backgroundImage_opacity(0.9, false, true, false, false, false, false, false, false, false, false, false);
+      backgroundImage_opacity(0.9,0,-1,0,0,0,0,0,0,0,0,0);
     }
     if(op==0.8){
-      backgroundImage_opacity(0.8, false, false, true, false, false, false, false, false, false, false, false);
+      backgroundImage_opacity(0.8,0,0,-1,0,0,0,0,0,0,0,0);
     }
     if(op==0.7){
-      backgroundImage_opacity(0.7, false, false, false, true, false, false, false, false, false, false, false);
+      backgroundImage_opacity(0.7,0,0,0,-1,0,0,0,0,0,0,0);
     }
     if(op==0.6){
-      backgroundImage_opacity(0.6, false, false, false, false, true, false, false, false, false, false, false);
+      backgroundImage_opacity(0.6,0,0,0,0,-1,0,0,0,0,0,0);
     }
     if(op==0.5){
-      backgroundImage_opacity(0.5, false, false, false, false, false, true, false, false, false, false, false);
+      backgroundImage_opacity(0.5,0,0,0,0,0,-1,0,0,0,0,0);
     }
     if(op==0.4){
-      backgroundImage_opacity(0.4, false, false, false, false, false, false, true, false, false, false, false);
+      backgroundImage_opacity(0.4,0,0,0,0,0,0,-1,0,0,0,0);
     }
     if(op==0.3){
-      backgroundImage_opacity(0.3, false, false, false, false, false, false, false, true, false, false, false);
+      backgroundImage_opacity(0.3,0,0,0,0,0,0,0,-1,0,0,0);
     }
     if(op==0.2){
-      backgroundImage_opacity(0.2, false, false, false, false, false, false, false, false, true, false, false);
+      backgroundImage_opacity(0.2,0,0,0,0,0,0,0,0,-1,0,0);
     }
     if(op==0.1){
-       backgroundImage_opacity(0.1, false, false, false, false, false, false, false, false, false, true, false);
+       backgroundImage_opacity(0.1,0,0,0,0,0,0,0,0,0,-1,0);
     }
     if(op==0.01){
-      backgroundImage_opacity(0.01, false, false, false, false, false, false, false, false, false, false, true);
+      backgroundImage_opacity(0.01,0,0,0,0,0,0,0,0,0,0,-1);
     }
     Forced_always_below();
   } catch(er){widget_reload()}
@@ -623,32 +623,32 @@ function menuitem21OnClick(Sender){
 
 function menuitem24OnClick(Sender){
   accweathercore_interval = 300000;
-  awcore_interval(300000, true, false, false, false, false, false);
+  awcore_interval(300000,-1,0,0,0,0,0);
 }
 
 function menuitem25OnClick(Sender){
   accweathercore_interval = 600000;
-  awcore_interval(600000, false, true, false, false, false, false);  
+  awcore_interval(600000,0,-1,0,0,0,0);  
 }
 
 function menuitem26OnClick(Sender){
   accweathercore_interval = 900000;
-  awcore_interval(900000, false, false, true, false, false, false);
+  awcore_interval(900000,0,0,-1,0,0,0);
 }
 
 function menuitem27OnClick(Sender){
   accweathercore_interval = 1200000;
-  awcore_interval(1200000, false, false, false, true, false, false);
+  awcore_interval(1200000,0,0,0,-1,0,0);
 }
 
 function menuitem28OnClick(Sender){
   accweathercore_interval = 1800000;
-  awcore_interval(1800000, false, false, false, false, true, false);
+  awcore_interval(1800000,0,0,0,0,-1,0);
 }
 
 function menuitem29OnClick(Sender){
   accweathercore_interval = 3600000;
-  awcore_interval(3600000, false, false, false, false, false, true); 
+  awcore_interval(3600000,0,0,0,0,0,-1); 
 }
 
 function serverUpgrTimeOnChange(Sender){
@@ -695,45 +695,45 @@ function curWeatherOnChange(Sender){
 }
 
 function menuitem32OnClick(Sender){
-  backgroundImage_opacity(1, true, false, false, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(1,-1,0,0,0,0,0,0,0,0,0,0);
 }
 
 function menuitem33OnClick(Sender){
-  backgroundImage_opacity(0.9, false, true, false, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.9,0,-1,0,0,0,0,0,0,0,0,0);
 }
 
 function menuitem34OnClick(Sender){
-  backgroundImage_opacity(0.8, false, false, true, false, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.8,0,0,-1,0,0,0,0,0,0,0,0);
 }
 
 function menuitem35OnClick(Sender){
-  backgroundImage_opacity(0.7, false, false, false, true, false, false, false, false, false, false, false);
+  backgroundImage_opacity(0.7,0,0,0,-1,0,0,0,0,0,0,0);
 }
 
 function menuitem36OnClick(Sender){
-  backgroundImage_opacity(0.6, false, false, false, false, true, false, false, false, false, false, false);
+  backgroundImage_opacity(0.6,0,0,0,0,-1,0,0,0,0,0,0);
 }
 
 function menuitem37OnClick(Sender){
-  backgroundImage_opacity(0.5, false, false, false, false, false, true, false, false, false, false, false);
+  backgroundImage_opacity(0.5,0,0,0,0,0,-1,0,0,0,0,0);
 }
 
 function menuitem38OnClick(Sender){
-  backgroundImage_opacity(0.4, false, false, false, false, false, false, true, false, false, false, false);
+  backgroundImage_opacity(0.4,0,0,0,0,0,0,-1,0,0,0,0);
 }
 
 function menuitem39OnClick(Sender){
-  backgroundImage_opacity(0.3, false, false, false, false, false, false, false, true, false, false, false);
+  backgroundImage_opacity(0.3,0,0,0,0,0,0,0,-1,0,0,0);
 }
 
 function menuitem40OnClick(Sender){
-  backgroundImage_opacity(0.2, false, false, false, false, false, false, false, false, true, false, false);
+  backgroundImage_opacity(0.2,0,0,0,0,0,0,0,0,-1,0,0);
 }
 
 function menuitem41OnClick(Sender){
-  backgroundImage_opacity(0.1, false, false, false, false, false, false, false, false, false, true, false);
+  backgroundImage_opacity(0.1,0,0,0,0,0,0,0,0,0,-1,0);
 }
 
 function menuitem42OnClick(Sender){
-  backgroundImage_opacity(0.01, false, false, false, false, false, false, false, false, false, false, true);
+  backgroundImage_opacity(0.01,0,0,0,0,0,0,0,0,0,0,-1);
 }
