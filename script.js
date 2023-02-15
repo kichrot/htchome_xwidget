@@ -197,15 +197,15 @@ function layer2OnChange(Sender){
 }
 
 function indicator_OnUpdate(){
-  indicator.Visible = true;
+  indicator.Visible = -1;
   sleep(400);
   for(var i = 0; i < 2; i++){
-    indicator.Visible = false;
+    indicator.Visible = 0;
     sleep(400);
-    indicator.Visible = true;
+    indicator.Visible = -1;
     sleep(400);
   }
-  indicator.Visible = false;
+  indicator.Visible = 0;
 }
 
 function accweathercore1OnUpdate(Sender){
@@ -259,7 +259,7 @@ function Cur_WeatherIconOnDblClick(){
 
 function menuitem7_checked(){
   menuitem7.checked = layer3.Visible;
-  if(layer3.Visible == false){
+  if(layer3.Visible==0){
     backgroundImage.Src = WidgetPath+"base_2.png";
   }else{
     backgroundImage.Src = WidgetPath+"base.png";
@@ -275,73 +275,73 @@ function menuitem7OnClick(Sender){
 
 function WeatherIcon_click_ch(ch){
   if(ch=="1"){
-    menuitem19.Checked = false;
-    curWeatherIcon.MouseThrough = true;
-    Day2_WeatherIcon.MouseThrough = true;
-    Day3_WeatherIcon.MouseThrough = true;
-    Day4_WeatherIcon.MouseThrough = true;
-    Day5_WeatherIcon.MouseThrough = true;
-    Day6_WeatherIcon.MouseThrough = true;
-    Day7_WeatherIcon.MouseThrough = true;
-    Day8_WeatherIcon.MouseThrough = true;
+    menuitem19.Checked = 0;
+    curWeatherIcon.MouseThrough = -1;
+    Day2_WeatherIcon.MouseThrough = -1;
+    Day3_WeatherIcon.MouseThrough = -1;
+    Day4_WeatherIcon.MouseThrough = -1;
+    Day5_WeatherIcon.MouseThrough = -1;
+    Day6_WeatherIcon.MouseThrough = -1;
+    Day7_WeatherIcon.MouseThrough = -1;
+    Day8_WeatherIcon.MouseThrough = -1;
 
-    Day2_lowTemp.MouseThrough = true;
-    Day3_lowTemp.MouseThrough = true;
-    Day4_lowTemp.MouseThrough = true;
-    Day5_lowTemp.MouseThrough = true;
-    Day6_lowTemp.MouseThrough = true;
-    Day7_lowTemp.MouseThrough = true;
-    Day8_lowTemp.MouseThrough = true;
+    Day2_lowTemp.MouseThrough = -1;
+    Day3_lowTemp.MouseThrough = -1;
+    Day4_lowTemp.MouseThrough = -1;
+    Day5_lowTemp.MouseThrough = -1;
+    Day6_lowTemp.MouseThrough = -1;
+    Day7_lowTemp.MouseThrough = -1;
+    Day8_lowTemp.MouseThrough = -1;
 
-    Day2_highTemp.MouseThrough = true;
-    Day3_highTemp.MouseThrough = true;
-    Day4_highTemp.MouseThrough = true;
-    Day5_highTemp.MouseThrough = true;
-    Day6_highTemp.MouseThrough = true;
-    Day7_highTemp.MouseThrough = true;
-    Day8_highTemp.MouseThrough = true;
+    Day2_highTemp.MouseThrough = -1;
+    Day3_highTemp.MouseThrough = -1;
+    Day4_highTemp.MouseThrough = -1;
+    Day5_highTemp.MouseThrough = -1;
+    Day6_highTemp.MouseThrough = -1;
+    Day7_highTemp.MouseThrough = -1;
+    Day8_highTemp.MouseThrough = -1;
 
-    Day2_Date.MouseThrough = true;
-    Day3_Date.MouseThrough = true;
-    Day4_Date.MouseThrough = true;
-    Day5_Date.MouseThrough = true;
-    Day6_Date.MouseThrough = true;
-    Day7_Date.MouseThrough = true;
-    Day8_Date.MouseThrough = true;
+    Day2_Date.MouseThrough = -1;
+    Day3_Date.MouseThrough = -1;
+    Day4_Date.MouseThrough = -1;
+    Day5_Date.MouseThrough = -1;
+    Day6_Date.MouseThrough = -1;
+    Day7_Date.MouseThrough = -1;
+    Day8_Date.MouseThrough = -1;
   }else{
-    menuitem19.Checked = true;
-    curWeatherIcon.MouseThrough = false;
-    Day2_WeatherIcon.MouseThrough = false;
-    Day3_WeatherIcon.MouseThrough = false;
-    Day4_WeatherIcon.MouseThrough = false;
-    Day5_WeatherIcon.MouseThrough = false;
-    Day6_WeatherIcon.MouseThrough = false;
-    Day7_WeatherIcon.MouseThrough = false;
-    Day8_WeatherIcon.MouseThrough = false;
+    menuitem19.Checked = -1;
+    curWeatherIcon.MouseThrough = 0;
+    Day2_WeatherIcon.MouseThrough = 0;
+    Day3_WeatherIcon.MouseThrough = 0;
+    Day4_WeatherIcon.MouseThrough = 0;
+    Day5_WeatherIcon.MouseThrough = 0;
+    Day6_WeatherIcon.MouseThrough = 0;
+    Day7_WeatherIcon.MouseThrough = 0;
+    Day8_WeatherIcon.MouseThrough = 0;
 
-    Day2_lowTemp.MouseThrough = false;
-    Day3_lowTemp.MouseThrough = false;
-    Day4_lowTemp.MouseThrough = false;
-    Day5_lowTemp.MouseThrough = false;
-    Day6_lowTemp.MouseThrough = false;
-    Day7_lowTemp.MouseThrough = false;
-    Day8_lowTemp.MouseThrough = false;
+    Day2_lowTemp.MouseThrough = 0;
+    Day3_lowTemp.MouseThrough = 0;
+    Day4_lowTemp.MouseThrough = 0;
+    Day5_lowTemp.MouseThrough = 0;
+    Day6_lowTemp.MouseThrough = 0;
+    Day7_lowTemp.MouseThrough = 0;
+    Day8_lowTemp.MouseThrough = 0;
 
-    Day2_highTemp.MouseThrough = false;
-    Day3_highTemp.MouseThrough = false;
-    Day4_highTemp.MouseThrough = false;
-    Day5_highTemp.MouseThrough = false;
-    Day6_highTemp.MouseThrough = false;
-    Day7_highTemp.MouseThrough = false;
-    Day8_highTemp.MouseThrough = false;
+    Day2_highTemp.MouseThrough = 0;
+    Day3_highTemp.MouseThrough = 0;
+    Day4_highTemp.MouseThrough = 0;
+    Day5_highTemp.MouseThrough = 0;
+    Day6_highTemp.MouseThrough = 0;
+    Day7_highTemp.MouseThrough = 0;
+    Day8_highTemp.MouseThrough = 0;
 
-    Day2_Date.MouseThrough = false;
-    Day3_Date.MouseThrough = false;
-    Day4_Date.MouseThrough = false;
-    Day5_Date.MouseThrough = false;
-    Day6_Date.MouseThrough = false;
-    Day7_Date.MouseThrough = false;
-    Day8_Date.MouseThrough = false;
+    Day2_Date.MouseThrough = 0;
+    Day3_Date.MouseThrough = 0;
+    Day4_Date.MouseThrough = 0;
+    Day5_Date.MouseThrough = 0;
+    Day6_Date.MouseThrough = 0;
+    Day7_Date.MouseThrough = 0;
+    Day8_Date.MouseThrough = 0;
   }
 }
 
@@ -405,37 +405,37 @@ function widgetOnLoad(){
     layer3.Visible = getValue('layer3.visible',layer3.Visible);
     menuitem7_checked(); 
     wth_icon = getValue('wth_icon',wth_icon);
-    if(wth_icon=="1"){menuitem10.checked = true;}
-    if(wth_icon=="2"){menuitem11.checked = true;}
-    if(wth_icon=="3"){menuitem12.checked = true;}
-    if(wth_icon=="4"){menuitem13.checked = true;}
+    if(wth_icon=="1"){menuitem10.checked = -1;}
+    if(wth_icon=="2"){menuitem11.checked = -1;}
+    if(wth_icon=="3"){menuitem12.checked = -1;}
+    if(wth_icon=="4"){menuitem13.checked = -1;}
     WeatherIcon_src();
     var Metric = GetValue("accweathercore1.isMetric","1");
     if(Metric==1){
       accweathercore1.cmd(null,"!SetCelcius");
-      menuitem4.checked = true;
-      menuitem5.checked = false;
+      menuitem4.checked = -1;
+      menuitem5.checked = 0;
     }
     if(Metric==0){
       accweathercore1.cmd(null,"!SetFahrenheit");
-      menuitem4.checked = false;
-      menuitem5.checked = true;
+      menuitem4.checked = 0;
+      menuitem5.checked = -1;
     }
     var hr = GetValue("datetimecore1.is12hr","0");
     if(hr=="0"){
       datetimecore1.cmd(null,"!24hr");
-      menuitem18.checked = true;
-      menuitem17.checked = false;
+      menuitem18.checked = -1;
+      menuitem17.checked = 0;
     }
     if(hr=="1"){
       datetimecore1.cmd(null,"!12hr");
-      menuitem18.checked = false;
-      menuitem17.checked = true;
+      menuitem18.checked = 0;
+      menuitem17.checked = -1;
     }
     WeatherIcon_DblClick = GetValue("WeatherIcon_DblClick","1");
     WeatherIcon_click_ch(WeatherIcon_DblClick);
-    menuitem20.checked = GetValue("below_all_the_windows",true);
-    menuitem21.checked = GetValue("show_indicator",true);
+    menuitem20.checked = GetValue("below_all_the_windows",-1);
+    menuitem21.checked = GetValue("show_indicator",-1);
     accweathercore_interval = getValue('accweathercore.interval', 900000);
     if(accweathercore_interval==300000){
       awcore_interval(300000,-1,0,0,0,0,0);  
@@ -455,11 +455,11 @@ function widgetOnLoad(){
     if(accweathercore_interval==3600000){
       awcore_interval(3600000,0,0,0,0,0,-1);
     }
-    menuitem30.checked = GetValue("show_sec",false);
+    menuitem30.checked = GetValue("show_sec",0);
     if(menuitem30.checked){
-      sec.Visible = true;
+      sec.Visible = -1;
     }else{
-      sec.Visible = false;
+      sec.Visible = 0;
     }  
     var op = GetValue("backgroundImage.Opacity",1);
     if(op==1){
@@ -501,79 +501,79 @@ function widgetOnLoad(){
 }
 
 function menuitem10OnClick(Sender){
-  if(menuitem10.checked==false){
+  if(menuitem10.checked==0){
     wth_icon = "1"; 
     setValue('wth_icon',"1");
     saveIni;
-    menuitem10.checked = true;
-    menuitem11.checked = false;
-    menuitem12.checked = false;
-    menuitem13.checked = false; 
+    menuitem10.checked = -1;
+    menuitem11.checked = 0;
+    menuitem12.checked = 0;
+    menuitem13.checked = 0; 
   }
   WeatherIcon_src();
 }
 
 function menuitem11OnClick(Sender){
-if(menuitem11.checked==false){
+if(menuitem11.checked==0){
     wth_icon = "2";
     setValue('wth_icon',"2");
     saveIni;
-    menuitem10.checked = false;
-    menuitem11.checked = true;
-    menuitem12.checked = false;
-    menuitem13.checked = false;
+    menuitem10.checked = 0;
+    menuitem11.checked = -1;
+    menuitem12.checked = 0;
+    menuitem13.checked = 0;
   } 
   WeatherIcon_src();  
 }
 
 function menuitem12OnClick(Sender){
-if(menuitem12.checked==false){
+if(menuitem12.checked==0){
     wth_icon = "3";
     setValue('wth_icon',"3");
     saveIni;
-    menuitem10.checked = false;
-    menuitem11.checked = false;
-    menuitem12.checked = true;
-    menuitem13.checked = false;
+    menuitem10.checked = 0;
+    menuitem11.checked = 0;
+    menuitem12.checked = -1;
+    menuitem13.checked = 0;
   }
   WeatherIcon_src(); 
 }
 
 function menuitem13OnClick(Sender){
-if(menuitem13.checked==false){
+if(menuitem13.checked==0){
     wth_icon = "4";
     setValue('wth_icon',"4");
     saveIni;
-    menuitem10.checked = false;
-    menuitem11.checked = false;
-    menuitem12.checked = false;
-    menuitem13.checked = true;
+    menuitem10.checked = 0;
+    menuitem11.checked = 0;
+    menuitem12.checked = 0;
+    menuitem13.checked = -1;
   } 
   WeatherIcon_src();
 }
 
 function menuitem4OnClick(Sender){
   accweathercore1.cmd(null,"!SetCelcius");
-  menuitem4.checked = true;
-  menuitem5.checked = false;
+  menuitem4.checked = -1;
+  menuitem5.checked = 0;
 }
 
 function menuitem5OnClick(Sender){
   accweathercore1.cmd(null,"!SetFahrenheit");
-  menuitem4.checked = false;
-  menuitem5.checked = true;
+  menuitem4.checked = 0;
+  menuitem5.checked = -1;
 }
  
 function menuitem17OnClick(Sender){
   datetimecore1.cmd(null,"!12hr");
-  menuitem17.checked = true;
-  menuitem18.checked = false;  
+  menuitem17.checked = -1;
+  menuitem18.checked = 0;  
 }
 
 function menuitem18OnClick(Sender){
   datetimecore1.cmd(null,"!24hr");
-  menuitem17.checked = false;
-  menuitem18.checked = true;  
+  menuitem17.checked = 0;
+  menuitem18.checked = -1;  
 }
 
 function menuitem19OnClick(Sender){
@@ -602,20 +602,20 @@ function widgetOnEnter(){
 }
 
 function menuitem20OnClick(Sender){
-  if(menuitem20.checked==false){
-    menuitem20.checked = true;
+  if(menuitem20.checked==0){
+    menuitem20.checked = -1;
   }else{
-    menuitem20.checked = false;
+    menuitem20.checked = 0;
   }   
   setValue('below_all_the_windows',menuitem20.checked);
   saveIni;
 }
 
 function menuitem21OnClick(Sender){
-  if(menuitem21.checked==false){
-    menuitem21.checked = true;
+  if(menuitem21.checked==0){
+    menuitem21.checked = -1;
   }else{
-    menuitem21.checked = false;
+    menuitem21.checked = 0;
   }  
   setValue('show_indicator',menuitem21.checked);
   saveIni;
@@ -677,12 +677,12 @@ function menuitem1OnClick(Sender){
 }
 
 function menuitem30OnClick(Sender){
-  if(menuitem30.checked==false){
-    menuitem30.checked = true;
-    sec.Visible = true; 
+  if(menuitem30.checked==0){
+    menuitem30.checked = -1;
+    sec.Visible = -1; 
   }else{
-    menuitem30.checked = false;
-    sec.Visible = false;
+    menuitem30.checked = 0;
+    sec.Visible = 0;
   }
   setValue('show_sec',menuitem30.checked);
   saveIni; 
