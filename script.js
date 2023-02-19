@@ -193,7 +193,10 @@ function checkDateTime(){
 function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
-  if(widget_OnLoad==0){checkDateTime();}
+  if(widget_OnLoad==0){
+    if(curWeatherUpgrTime==""){widget_reload();}
+    if(widget_OnLoad==0){checkDateTime();}
+  }
 }
 
 function indicator_OnUpdate(){
