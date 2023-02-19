@@ -4,6 +4,10 @@
 	<window type="widget" width="596" height="261" onLoad="widgetOnLoad" onLeave="Forced_always_below" onEnter="widgetOnEnter" onPopupMenu="Forced_always_below" onResize="Forced_always_below" onMove="Forced_always_below" onFlipToBack="Forced_always_below" onFlipToFront="Forced_always_below" onWidgetDeactivate="Forced_always_below">
 		<side name="front">
 			<layer name="layer15" width="596" height="261" onDblClick="!Flip" locked="true">
+				<text name="no_forecast" width="229" height="157" left="367" locked="true" font.family="Tahoma" font.size="15" font.fill.color="217,37,37,255" hAlign="0" vAlign="0" text="Прогноз не доступен.
+Проверьте подключение
+ к интернет и перезагрузите
+ виджет." font.style="Bold" flatStyle.enabled="true" flatStyle.offsetX="-1" visible="false"/>
 				<image name="indicator" left="567" top="9" width="20" height="20" src="Images\Badge2.png" wrapMode="1" opacity=".4" locked="true" hAlign="1" vAlign="1" visible="false"/>
 				<text name="cityName" width="331" height="22" font.family="Tahoma" font.size="18" left="257" top="135" font.fill.color="255,255,255,255" core="accweathercore1" coreFormat="${cityName}" cursor="-21" font.style="Bold" flatStyle.enabled="true" flatStyle.color="0,0,0,255" flatStyle.offsetX="-1" locked="true" mouseThrough="true" onChange="cityNameOnChange"/>
 				<text name="curWeatherText" left="257" top="101" width="331" height="34" font.fill.color="255,255,255,255" font.size="16" font.family="Tahoma" mouseThrough="True" core="accweathercore1" wordWrap="True" upperCaseFirstWord="True" text="Sunny" coreFormat="${curWeatherText}" font.style="Bold" effect.bevel.size="6" effect.bevel.direction="88" effect.innerShadow.opacity=".42" effect.shadow.direction="146" effect.shadow.distance="-29" flatStyle.enabled="true" flatStyle.offsetX="-1" flatStyle.color="0,0,0,255" effect.shadow.opacity="0" effect.glow.opacity=".85" effect.glow.softness="1.14" effect.glow.color="0,0,0,255" locked="true"/>

@@ -162,7 +162,7 @@ function layer1OnChange(Sender){
 
 function timercore1OnUpdate(Sender){
   if(WeatherUpgrTime==curWeatherUpgrTime.text || curWeatherUpgrTime.text==""){
-    widget_reload();
+    no_forecast.Visible = -1;
   }
   timercore1.Enabled = 0;
 }
@@ -177,6 +177,7 @@ function checkDateTime(){
     WeatherUpgrTime = curWeatherUpgrTime.text;
     if(core_Minute>UpdateWeather_minute_interval){
       accweathercore1.Enabled = -1;
+      curWeatherUpgrTime.text = "";
       accweathercore1.cmd(null,"!UpdateWeather");
       timercore1.Enabled = -1;
       accweathercore1.Enabled = 0;
@@ -184,6 +185,7 @@ function checkDateTime(){
     }
     if(UpdateWeather_day!=core_Day || UpdateWeather_hour!=core_Hour){
        accweathercore1.Enabled = -1;
+       curWeatherUpgrTime.text = "";
        accweathercore1.cmd(null,"!UpdateWeather");
        accweathercore1.Enabled = 0;
     } 
@@ -194,7 +196,11 @@ function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
   if(widget_OnLoad==0){
-    if(curWeatherUpgrTime.Text==""){widget_reload();}
+    if(curWeatherUpgrTime.Text==""){
+      no_forecast.Visible = -1;
+    }else{
+      no_forecast.Visible = 0;
+    }
     checkDateTime();
   }
 }
@@ -215,6 +221,7 @@ function accweathercore1OnUpdate(Sender){
   try{
     displacementDay();
     accweathercore1.Enabled = 0;
+    no_forecast.Visible = 0;
     curWeatherUpgrTime.text = datetimecore1.get("%Hour0")+':'+datetimecore1.get("%Minute0");
     var cur_Date = new Date();
     UpdateWeather_day = cur_Date.getDate();
