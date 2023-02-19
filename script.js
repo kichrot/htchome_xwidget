@@ -194,7 +194,7 @@ function layer2OnChange(Sender){
   numbimage2.values = Sender.value
   displacementDay();
   if(widget_OnLoad==0){
-    if(curWeatherUpgrTime==""){widget_reload();}
+    if(curWeatherUpgrTime.Text==""){widget_reload();}
     checkDateTime();
   }
 }
