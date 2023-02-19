@@ -195,7 +195,7 @@ function layer2OnChange(Sender){
   displacementDay();
   if(widget_OnLoad==0){
     if(curWeatherUpgrTime==""){widget_reload();}
-    if(widget_OnLoad==0){checkDateTime();}
+    checkDateTime();
   }
 }
 
